@@ -1,0 +1,45 @@
+Padrões de projeto (design patterns) são soluções típicas para problemas
+comuns em projeto de software. Cada padrão é como uma planta de construção
+que você pode customizar para resolver um problema de projeto particular
+em seu código
+
+Os padrões criacionais fornecem vários mecanismos de criação de objetos, que
+aumentam a flexibilidade e reutilização de código já existente.
+
+Os padrões estruturais explicam como montar objetos e classes em estruturas
+maiores mas ainda mantendo essas estruturas flexíveis e eficientes.
+
+O Adapter é um padrão de projeto estrutural que permite objetos com interfaces
+incompatíveis colaborarem entre si.
+
+O Observer é um padrão de projeto comportamental que permite que você defina
+um mecanismo de assinatura para notificar múltiplos objetos sobre quaisquer
+eventos que aconteçam com o objeto que eles estão observando.
+
+O Strategy é um padrão de projeto comportamental que permite que você defina uma
+família de algoritmos, coloque-os em classes separadas, e faça os objetos deles intercambiáveis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    font-family: Jakarts;
+}
+@font-face {
+    font-family: Jakarts;
+    src: url(../src/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf);
+}
+body{
+    background-image: url(../src/img/fotobanner1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu{
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    opacity: 0.6;
+}
+.navbar{
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+.espaco{
+    width: 50px;
+}
+.logo{
+    width: 190px;
+}
+.user{
+    width: 40px;
+    margin-right: 10px;
+}
+.formu{
+    display: flex;
+    justify-content: center;
+}
+.corpo{
+    background-color: #ffffff;
+    text-align: center;
+    width: 300px;
+    margin: 80px;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.botao{
+    width: 100%;
+    height: 30px;
+    background-color: #8DB600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.botao:hover{
+    background-color: #7ca200;
+}
+
+.input1{
+    width: 100%;
+    height: 25px;
+    border: black solid 0.5px;
+    color: var(--cinza);
+    border-radius: 5px;
+    padding-left: 22px;
+    font-family: inherit;
+    font-weight: 400;
+    color: black;
+    font-size: 14px;
+    margin: 7px;
+}
+
+.input1::placeholder{
+    font-family: Jakarts;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.input2{
+    width: 60%;
+    height: 25px;
+    border: black solid 0.5px;
+    color: var(--cinza);
+    border-radius: 5px;
+    padding-left: 22px;
+    font-family: inherit;
+    font-weight: 400;
+    color: black;
+    font-size: 14px;
+    margin: 7px;
+
+}
+
+.input2::placeholder{
+    font-family: Jakarts;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.input3{
+    width: 100%;
+    height: 25px;
+    border: black solid 0.5px;
+    color: var(--cinza);
+    border-radius: 5px;
+    padding-left: 22px;
+    font-family: inherit;
+    font-weight: 400;
+    color: black;
+    font-size: 14px;
+    margin: 7px;
+}
+
+.input3::placeholder{
+    font-family: Jakarts;
+    font-weight: 400;
+    font-size: 14px;
+}
+

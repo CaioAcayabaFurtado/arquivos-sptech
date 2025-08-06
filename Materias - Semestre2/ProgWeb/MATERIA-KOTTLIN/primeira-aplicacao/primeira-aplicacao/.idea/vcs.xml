@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../2023-1/3ADS/JWT/front-jwt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../2023-1/3ADS/JWT/spring-security-jwt-exemplo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../2023-1/3ADS/PROG WEB/B/alunos/MocaRestService" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../2023-1/3ADS/PROG WEB/B/projetos/padroes-de-projeto-web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../2023-1/3ADS/ajuda/apl-back-zup" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../2024-1/3ADS-A/04_06-03/exercicio-controller" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../2024-1/CCO/04_07-03/exercicio-controller" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/2022-2/ADS-A/music-box-ads-a" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/2022-2/ADS-C/aula01-C/music-box" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/2022-2/ADS-C/music-box-ads-c" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/2022-2/music-box" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/SCRIPT/antigo/music-box" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/SCRIPT/teste" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/antigo/LAB/d-ong" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/antigo/LAB/d-ong-react" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../REACT/antigo/bootcamp-cco-2022-2" vcs="Git" />
+  </component>
+</project>

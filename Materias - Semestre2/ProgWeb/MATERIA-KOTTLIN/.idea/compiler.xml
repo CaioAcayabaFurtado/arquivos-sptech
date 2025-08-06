@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jar-executavel" />
+        <module name="introducao-jdbc" />
+        <module name="correcao-prova-ac1" />
+        <module name="primeira-aplicacao" />
+        <module name="projeto-encapsulamento-jdbc" />
+        <module name="exemplo-dependencia" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

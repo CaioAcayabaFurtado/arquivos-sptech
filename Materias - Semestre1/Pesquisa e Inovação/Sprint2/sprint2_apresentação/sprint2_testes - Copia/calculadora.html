@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSoy</title>
+    <link rel="stylesheet" href="css/calculadora.css">
+</head>
+
+<body>
+    <header class="menu">
+        <div class="navbar">
+            <div class="espaco"></div>
+            <img src="src/img/Logo.svg" alt="" class="logo">
+            <img src="src/img/vector.svg" alt="" class="user">
+        </div>
+    </header>
+
+    <div class="formu">
+        <div class="corpo">
+            <h1>Calculadora / Simulador Financeiro SafeSoy</h1>
+            <div class="box">
+                <br>
+                Insira o nome da sua empresa:
+                <br>
+                <input class="input1" type="text" id="input_nome" placeholder="Digite seu nome: " style="width: 185px;">
+                <br>
+                <br>
+                Insira o gasto médio mensal com defensivos agrícolas por 60 Kg de soja:
+                <!--Aproximadamente 30,63 por 60 quilos-->
+                <br>
+                R$ <input class="input2" type="number" id="input_gasto" placeholder="Digite seus gastos: ">
+                <br>
+                <br>
+                Insira sua produção total de soja em toneladas:
+                <input class="input3" type="number" id="input_producao" placeholder=" Quanto vc produziu: " style="width: 185px;">
+                <br>
+                <!-- Toneladas Aproximadamente 70928 toneladas por mês -->
+                <br>
+                <br>
+                <button onclick="simularEconomia()" class="botao"><b>Simular Economia</b></button>
+                <br>
+                <div id="div_resultado"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    function simularEconomia() {
+
+        var nomeEmpresa = input_nome.value;
+        var gastoMes = Number(input_gasto.value);
+        var toneladas = Number(input_producao.value);
+
+        var kg = toneladas * 1000
+
+        gastoMes = (kg / 60) * gastoMes;
+
+        var gastoAno = gastoMes * 12;
+
+        var gastoAtenuadoMes = gastoMes - (gastoMes * 0.25);
+
+        var gastoAtenuadoAno = gastoAno - (gastoAno * 0.25);
+
+        div_resultado.innerHTML = (`
+            <br>
+            A empresa ${nomeEmpresa} gasta mensalmente R$${gastoMes.toFixed(2)} com defensivos agrícolas,
+            <br>
+            O que se converte em R$${gastoAno} anualmente.
+            <br>
+            Com o uso do SafeSoy, suas economias podem alcançar até 25%, sendo assim, economizará mensalmente R$${gastoAtenuadoMes}
+            <br>
+            e R$${gastoAtenuadoAno} ao ano.
+
+
+        `)
+    }
+</script>

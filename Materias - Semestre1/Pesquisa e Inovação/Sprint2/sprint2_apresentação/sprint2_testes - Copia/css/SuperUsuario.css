@@ -1,0 +1,181 @@
+:root {
+    --verde: #8DB600;
+    --azul: #7AB3C6;
+    --amarelo: #DFC900;
+    --cinza: #ACACAC;
+    --amarelo_escuro: #B8B254;
+    --verde_escuro: #9CBC2F;
+}
+@font-face {
+    font-family: Jakarts;
+    src: url(../src/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf);
+}
+html{
+    font-family: Jakarts;
+}
+.background{
+    background-image: url(../src/img/fotobanner1.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+.menu{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(255, 255, 255, 0.55);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+.espaco{
+    width: 50px;
+}
+.logo{
+    width: 190px;
+}
+.user{
+    width: 40px;
+    margin-right: 20px;
+}
+
+.mensagem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 450px;
+}
+.bloco1{
+    margin: 40px;
+}
+.msg{
+    font-size: 44px;
+    font-weight: 900;
+    color: #ffff;
+}
+.texto{
+    font-size: 33px;
+    font-weight: 900;
+    color: #ffff;
+    margin-top: 23px;
+}
+
+/* Css do painel 1*/
+
+.paipainel{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.painel{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin-top: 41px;
+    width: 825px;
+    height: 252px;
+    border-radius: 20px;
+    border: 10px solid var(--verde);
+}
+.titulopainel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 236px;
+    height: 62px;
+    background: var(--verde);
+    border-radius: 0px 0px 20px 20px;
+}
+.titulopainel h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+}
+.conteudopainel{
+    display: flex;
+    margin: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.quatro{
+    font-size: 50px;
+    font-weight: 900;
+}
+.funcionario{
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+/* Css do painel 2 */
+.paipainel2{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.painel2{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    border: 10px solid var(--verde);
+}
+.titulospainel2{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    width: 828px;
+    height: 96px;
+    background: var(--verde);
+    border-radius: 0px 0px 20px 20px;
+}
+.titulospainel2 h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+}
+.conteudopainel2{
+    height: 100%;
+    width: 100%;
+}
+
+.pessoa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.funcionario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.profile{
+    width: 55px;
+    height: 55px;
+}
+.nome{
+    font-size: 15px;
+}
+.cargo{
+    justify-content: center;
+    display: flex;
+}
+.dots{
+    justify-content: center;
+    display: flex;
+    width: 115px;
+}

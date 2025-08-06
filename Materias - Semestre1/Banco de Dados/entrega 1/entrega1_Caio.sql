@@ -1,0 +1,208 @@
+create database Sprint1;
+use sprint1;
+
+-- TABELA ATLETA --
+create table atleta (
+idatleta int primary key,
+nome varchar (40),
+modalidade varchar (40),
+qntmedalha int (3)
+);
+
+desc atleta;
+
+insert into atleta values
+('123', 'Pedro', 'volei', 10),
+('124', 'Marcelo', 'futebol', 6),
+('125', 'Gabriel', 'volei', 8),
+('126', 'Mateus', 'handball', 5);
+
+select * from atleta;
+select nome, qntmedalha from atleta;
+select * from atleta where modalidade= 'volei';
+select * from atleta order by modalidade;
+select * from atleta order by qntmedalha desc;
+select * from atleta where nome like '%s%';
+select * from atleta where nome like 'P%';
+select * from atleta where nome like '%o';
+select * from atleta where nome like '%r_';
+
+drop table atleta;
+
+
+
+-- TABELA MUSICA --
+use sprint1;
+
+create table musica (
+idmusica int primary key,
+titulo varchar (40),
+artista varchar (40),
+genero varchar (40)
+);
+
+desc musica;
+
+insert into musica values
+(1, 'Samba', 'Lagum', 'Samba'),
+(2, 'Rosa Norte', 'Armandinho', 'Reggae'),
+(3, 'Campeão', 'Dudu', 'Trap'),
+(4, 'Proibida Pra Mim', 'CharlieBrownJr', 'Rock'),
+(5, 'Doce Veneno', 'CostaGold', 'Rap'),
+(6, 'Dia Azul', 'Teto', 'Trap'),
+(7, 'Meu Lugar', 'Arlindo Cruz', 'Samba');
+
+select * from musica;
+select artista from musica;
+select * from musica where genero= 'Samba';
+select * from musica where artista= 'Teto';
+select * from musica order by titulo;
+select * from musica order by artista desc;
+select * from musica where titulo like 'd%';
+select * from musica where artista like '%o';
+select * from musica where genero like '_a%';
+select * from musica where titulo like '%a_';
+
+drop table musica;
+
+
+-- TABELA FILME --
+use sprint1;
+
+create table filme (
+idfilme int primary key,
+titulo varchar (50),
+genero varchar (40),
+diretor varchar (40)
+);
+
+desc filme;
+
+insert into filme values
+(11, 'Gente Grande', 'Comedia', 'Dennis Dugan'),
+(12, 'Vingadores', 'Ação', 'Joe Russo'),
+(13, 'As Branquelas', 'Comedia', 'Keenen Ivory'),
+(14, '2001', 'FicçãoC', 'Stanley Kubrick'),
+(15, 'E.T.', 'FicçãoC', 'Steven Spielberg'),
+(16, 'A viagem de Chihiro', 'Animação1', 'Hayao Miyazaki'),
+(17, 'O Poderoso Chefão', 'Drama', 'Francis Ford');
+
+select * from filme;
+select titulo, diretor from filme;
+select * from filme where genero= 'Comedia';
+select * from filme where diretor= 'Francis Ford';
+select * from filme order by titulo;
+select *from filme order by diretor desc;
+select * from filme where titulo like 'A%';
+select * from filme where diretor like '%i';
+select * from filme where genero like '_i%';
+select * from filme where titulo like '%a_';
+
+drop table filme;
+
+
+
+-- TABELA PROFESSORES --
+use sprint1;
+
+create table professores (
+idprofessor int primary key,
+nome varchar (40),
+especialidade varchar (40),
+dn date
+);
+
+desc professores;
+
+insert into professores values
+(1, 'Joao', 'p.i', '1974-02-28'),
+(2, 'Roberto', 'algoritimo', '1966-11-04'),
+(3, 'Maria', 'p.i', '2000-09-12'),
+(4, 'Claudio', 's.o', '1980-01-20'),
+(5, 'Antonio', 'socio.e', '1970-05-15'),
+(6, 'Leticia', 'bancodedados', '1985-08-23');
+
+select * from professores;
+select especialidade from professores;
+select * from professores where especialidade= 'p.i';
+select * from professores order by nome;
+select * from professores order by dn;
+select * from professores where nome like 'C%';
+select * from professores where nome like '%o';
+select * from professores where nome like '_a%';
+select * from professores where nome like '%i_';
+
+drop table professores;
+
+
+
+-- TABELA CURSO -- 
+use sprint1;
+
+create table curso (
+idcurso int primary key,
+nome varchar (40),
+sigla varchar (3),
+coordenador varchar (40)
+);
+
+desc curso;
+
+insert into curso values
+('1', 'cienciasdacomputação', 'cco', 'ronaldo'),
+('2', 'sistemasdeinformação', 'sis', 'marcio'),
+('3', 'analiseedesenvolvimentodesistemas', 'ads', 'vitoria'),
+('4', 'adiministração', 'adm', 'aline');
+
+select * from curso;
+select coordenador from curso;
+select * from curso where sigla= 'sis';
+select * from curso order by nome;
+select * from curso order by coordenador desc;
+select * from curso where nome like 'a%';
+select * from curso where nome like '%o';
+select * from curso where nome like '_i%';
+select * from curso where nome like '%a_';
+
+drop table curso;
+
+
+
+-- TABELA REVISTA --
+
+use sprint1;
+
+create table revista (
+idrevista int primary key auto_increment,
+nome varchar (40),
+categoria varchar (30)
+);
+
+desc revista;
+insert into revista (nome,categoria) values
+('Veja', 'informativa'),
+('Recreio', 'infantil'),
+('Quatro Rodas', 'carros');
+
+select * from revista;
+
+update revista set categoria= 'geral' where idrevista in (1);
+select * from revista;
+
+insert into revista values 
+(4, 'Vogue', 'Moda'), 
+(5, 'Isto é', 'Informativa'), 
+(6, 'Claudia', 'Moda');
+select * from revista;
+
+desc table revista;
+alter table revista modify categoria varchar (40);
+desc table revista;
+
+alter table revista add column periodicidade varchar (15);
+desc table revista;
+alter table revista drop column periodicidade;
+
+drop table revista;
+
+

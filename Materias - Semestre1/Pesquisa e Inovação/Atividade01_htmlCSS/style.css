@@ -1,0 +1,21 @@
+
+        .divA {
+            background-color: #8c00ff; width: 467px; height: 467px;
+        }
+
+        .divB {
+            background-color: #98fbd5; width: 50%; height: 50%;
+        }
+
+        .paragrafo {
+            color: rgb(126, 46, 46); background-color: rgb(0, 17, 255); font-size: 25px; font-family: monospace; font-weight: bold;
+        }
+
+        .divD {
+            background-color: rgb(214, 235, 26); width: 50%; height: 50vh;
+        }
+
+        .divE {
+            background-color: rgb(255, 0, 157); width: 75vw; height: 50%;
+        }
+        
