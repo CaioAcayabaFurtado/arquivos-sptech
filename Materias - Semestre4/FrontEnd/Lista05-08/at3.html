@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+3. Crie um programa o qual:
+
+a) Solicite a nota do aluno;
+b) Ao clicar em "Classificar aluno", exiba uma dessas mensagens na página, abaixo do botão:
+
+      "Aluno precisa de muita ajuda", caso a nota for menor que 5.
+      "Aluno na média", caso a nota for entre 5 até 7.
+      "Aluno acima da média", caso a nota for maior que 7 até 9.5.
+      "Aluno fora da curva", caso a nota for maior que 9.5. 
+-->
+    <h1>Classificar Aluno:</h1>
+    <h3>Digite a nota do aluno:</h3>
+    <input type="number" id="nota"></input><br>
+    <button onclick="classificarAluno()">Classificar aluno</button><br>
+    <p id="mensagem_resultado"></p>
+</body>
+<script>
+    function classificarAluno(){
+        const nota = document.getElementById("nota").value
+        let mensagem = "";
+        if (nota < 5){
+            mensagem = "Aluno precisa de muita ajuda"
+        } else if (nota >=5 && nota <=7){
+            mensagem = "Aluno na média"
+        } else if (nota >7 && nota <=9.5){
+            mensagem = "Aluno acima da média"
+        } else if (nota >9.5){
+            mensagem = "Aluno fora da curva"
+        }
+        document.getElementById("mensagem_resultado").innerText = mensagem;
+    }
+</script>
+</html>

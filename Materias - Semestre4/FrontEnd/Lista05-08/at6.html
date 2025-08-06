@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+6. Crie um programa o qual:
+
+a) O usuário informa os nomes das músicas que mais gosta e clica em "Cadastrar"; 
+b) Ao clicar em "Exibir", as músicas vão aparecendo uma abaixo da outra, abaixo do botão. 
+c) Tenha dois campos "De..." e "Até...", que recebem um intervalo de dois números crescentes.
+d) Ao clicar em "Filtrar", deve exibir as músicas que estão dentro daquele intervalo.
+
+OBS: se o usuário informar "de 1 até 5", deve mostrar da primeira música até a quinta música da lista. 
+-->
+    <h1>Musicas Favoritas</h1>
+
+    <h3>Digite o nome da música:</h3>
+    <input type="text" id="musica_cadastrar">
+    <button onclick="cadastrarMusica()">Cadastrar</button><br>
+
+    <h3>Filtros</h3>
+    <p>De:</p><input type="number" id="de">
+    <p>Até:</p><input type="number" id="ate"><br>
+
+    <button onclick="exibirLista()">Exibir</button>
+    <p id="mensagem_resultado"></p>
+
+</body>
+<script>
+
+    let lista_musicas = []
+    function cadastrarMusica() {
+        musica_cadastrar = document.getElementById("musica_cadastrar").value
+        lista_musicas.push(musica_cadastrar)
+    }
+
+    function exibirLista() {
+        let de = document.getElementById("de").value;
+        let ate = document.getElementById("ate").value;
+        let mensagem = document.getElementById("mensagem_resultado");
+
+        // Se vazio, define valores padrão
+        de = de == "" ? 1 : parseInt(de);
+        ate = ate == "" ? lista_musicas.length : parseInt(ate);
+
+        mensagem.innerHTML = "";
+        for (let i = de - 1; i < ate; i++) {
+            if (lista_musicas[i] !== undefined) {
+                mensagem.innerHTML += `<p>${lista_musicas[i]}</p>`;
+            }
+        }
+    }
+</script>
+
+</html>

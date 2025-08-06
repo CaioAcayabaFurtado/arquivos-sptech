@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+1. Todo mundo gosta de pizza! É um prato super democrático, pois existem sabores veganos, 
+ vegetarianos, sem glúten, "low carb" (pouco carboidrato), doces etc.   
+
+ Crie um programa o qual:  
+a) Solicite o sabor e o preço da pizza;  
+b) Solicite a quantidade de amigos que vão comer;  
+c) Ao clicar num botão "Ver valor por amigo", calcule e exiba na tela uma frase como esta:  
+    Cada amigo vai colaborar com R$X para a pizza de Y.  
+Obs: inclua no valor da pizza a caixinha do entregador que é sempre 10% do valor da pizza.  
+Obs²: Y é o sabor da pizza;   
+-->
+
+    <h1>Bem vindo! Selecione um sabor de Pizza:</h1>
+    <select name="pizza_escolhida" id="pizza_escolhida">
+        <option value="mussarela">Mussarela</option>
+        <option value="calabresa">Calabresa</option>
+        <option value="frango">Frango com Catupiry</option>
+    </select>
+
+    <h3>Quantos amigos vão comer? </h3>
+    <input type="number" id="qtd_amigos"></input><br>
+
+    <button onclick="calcularValor()">Ver valor pago por amigo</button><br>
+
+    <p id="mensagem_resultado"></p>
+
+</body>
+<script>
+    function calcularValor() {
+        const pizza_escolhida = document.getElementById("pizza_escolhida").value;
+        const qtd_amigos = document.getElementById("qtd_amigos").value;
+        let valor = 0;
+
+        if (pizza_escolhida === "mussarela") {
+            valor = 40;
+        } else if (pizza_escolhida === "calabresa") {
+            valor = 45;
+        } else if (pizza_escolhida === "frango") {
+            valor = 50;
+        }
+
+        const valor_final = ((valor * 1.10) / qtd_amigos).toFixed(2);
+
+        const mensagem = `Cada amigo vai colaborar com R$${valor_final} para a pizza de ${pizza_escolhida}.`;
+        document.getElementById("mensagem_resultado").innerText = mensagem;
+    }
+</script>
+
+</html>
