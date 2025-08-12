@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+9. Crie um programa para gerar uma enquete de preferências com contador de votos:
+a) O usuário escolhe uma opção de preferência em uma lista suspensa (ex: "Café", "Chá", "Suco").
+b) Ao clicar em "Votar", o voto é registrado (usando vetor ou objeto contador).
+c) Ao clicar em "Ver resultado", exiba a quantidade de votos para cada opção.
+d) Mostre também qual foi a opção mais votada com uma frase especial:
+Ex: "Café está ganhando com 10 votos!"
+    -->
+
+    <h1>Ranking:</h1>
+    <select id="opcao_voto">
+        <option value="cafe">Café</option>
+        <option value="cha">Chá</option>
+        <option value="suco">Suco</option>
+    </select>
+    <button onclick="votar()">Votar</button>
+    <button onclick="verResultado()">Ver Resultado</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    let votos = {
+        cafe: 0,
+        cha: 0,
+        suco: 0
+    };
+
+    function votar() {
+        const opcao = document.getElementById("opcao_voto").value;
+        if (votos[opcao] !== undefined) {
+            votos[opcao]++;
+        }
+    }
+
+    function verResultado() {
+        const resultado = document.getElementById("resultado");
+        resultado.innerHTML = "";
+        let maxVotos = 0;
+        let opcaoMaisVotada = "";
+        for (const opcao in votos) {
+            resultado.innerHTML += `<p>${opcao.charAt(0).toUpperCase() + opcao.slice(1)}: ${votos[opcao]} votos</p>`;
+            if (votos[opcao] > maxVotos) {
+                maxVotos = votos[opcao];
+                opcaoMaisVotada = opcao;
+            }
+        }
+        if (opcaoMaisVotada) {
+            resultado.innerHTML += `<p>${opcaoMaisVotada.charAt(0).toUpperCase() + opcaoMaisVotada.slice(1)} está ganhando com ${maxVotos} votos!</p>`;
+        } else {
+            resultado.innerHTML += "<p>Nenhum voto registrado ainda.</p>";
+        }
+        
+    }
+</script>
+</html>

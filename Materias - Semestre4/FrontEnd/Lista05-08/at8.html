@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+8. Crie um programa para cadastrar alunos e exibir apenas os de certa faixa etária.
+a) O usuário informa o nome e a idade do aluno.
+b) Ao clicar em "Cadastrar", o aluno é adicionado a uma lista (usando vetor de objetos).
+c) Exibir a lista completa ao clicar em "Exibir todos".
+d) Tenha dois campos numéricos "De..." e "Até...", que representam uma faixa de idade.
+e) Ao clicar em "Filtrar por idade", exiba apenas os alunos cuja idade esteja dentro do intervalo
+-->
+    <h1>Cadastrar Aluno:</h1>
+    Nome: <input type="text" id="nome_input">
+    Idade <input type="text" id="idade_input">
+    <button onclick="cadastrarAluno()">Cadastrar</button>
+    <button onclick="exibirTodos()">Exibir Todos</button>
+    <br>
+    <br>
+    <h2>Filtrar por Idade:</h2>
+    De: <input type="number" id="de">
+    Até: <input type="number" id="ate">   
+    <button onclick="filtrarPorIdade()">Filtrar por Idade</button>
+    <br>
+    <br>
+    <h2>Lista de Alunos:</h2>
+    <p id="lista_alunos"></p>
+</body>
+<script>
+    lista_alunos = [];
+    function cadastrarAluno() {
+        const nome = document.getElementById("nome_input").value;
+        const idade = document.getElementById("idade_input").value;
+        if (nome && idade) {
+            const aluno = { nome: nome, idade: parseInt(idade) };
+            lista_alunos.push(aluno);
+        } else {
+            alert("Por favor, preencha todos os campos.");
+        }
+    }
+    function exibirTodos() {
+        const lista = document.getElementById("lista_alunos");
+        lista.innerHTML = "";
+        lista_alunos.forEach(aluno => {
+            lista.innerHTML += `<p>${aluno.nome} - ${aluno.idade} anos</p>`;
+        });
+    }
+    function filtrarPorIdade() {
+        const de = parseInt(document.getElementById("de").value) || 0;
+        const ate = parseInt(document.getElementById("ate").value) || Infinity;
+        const lista = document.getElementById("lista_alunos");
+        lista.innerHTML = "";
+        lista_alunos.forEach(aluno => {
+            if (aluno.idade >= de && aluno.idade <= ate) {
+                lista.innerHTML += `<p>${aluno.nome} - ${aluno.idade} anos</p>`;
+            }
+        });
+        if (lista.innerHTML === "") {
+            lista.innerHTML = "<p>Nenhum aluno encontrado nesse intervalo.</p>";
+        }
+    }
+</script>
+</html>

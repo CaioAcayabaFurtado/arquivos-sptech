@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+7. Crie um programa simples para gerenciamento de tarefas.
+a) O usuário informa uma nova tarefa e escolhe seu status: "Pendente" ou "Concluída".
+b) Ao clicar em "Adicionar tarefa", a tarefa é cadastrada (usando vetor).
+c) Ao clicar em "Exibir todas", mostra todas as tarefas com seus respectivos status.
+d) Tenha dois botões de filtro: "Ver somente pendentes" e "Ver somente concluídas", que exibem as tarefas com base no status. 
+-->
+    <h1>Gerenciamento de Tarefas</h1>
+    <h3>Digite a tarefa:</h3>
+    <input type="text" id="tarefa_input">
+    <select id="status_select">
+        <option value="pendente">Pendente</option>
+        <option value="concluida">Concluída</option>
+    </select>
+    <button onclick="adicionarTarefa()">Adicionar Tarefa</button><br>
+    <button onclick="exibirTodas()">Exibir Todas</button>
+    <button onclick="filtrarLista('pendente')">Ver Somente Pendentes</button>
+    <button onclick="filtrarLista('concluida')">Ver Somente Concluídas</button>
+    <p id="resultado_tarefas"></p>
+</body>
+<script>
+    tarefas = [];
+    function adicionarTarefa() {
+        const tarefaInput = document.getElementById("tarefa_input").value;
+        const statusSelect = document.getElementById("status_select").value;
+
+        if (tarefaInput.trim() === "") {
+            alert("Por favor, insira uma tarefa.");
+            return;
+        }
+
+        const tarefa = {
+            nome: tarefaInput,
+            status: statusSelect
+        };
+
+        tarefas.push(tarefa);    
+    }
+
+    function exibirTodas() {
+        const resultado = document.getElementById("resultado_tarefas");
+        resultado.innerHTML = "";
+
+        tarefas.forEach((tarefa, i) => {
+            resultado.innerHTML += `<p>${i + 1}. ${tarefa.nome} - ${tarefa.status}</p>`;
+        });
+    }
+    function filtrarLista(status) {
+        const resultado = document.getElementById("resultado_tarefas");
+        resultado.innerHTML = "";
+
+        tarefas.filter(tarefa => tarefa.status === status).forEach((tarefa, i) => {
+            resultado.innerHTML += `<p>${i + 1}. ${tarefa.nome} - ${tarefa.status}</p>`;
+        });
+    }
+</script>
+</html>
