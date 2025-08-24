@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 2. (Cadastro de Livros) Crie um programa o qual:
+
+a) O usuário informa o título do livro e o autor;
+
+b) Ao clicar em "Cadastrar", o livro é adicionado a um vetor de objetos;
+
+c) Ao clicar em "Exibir livros", liste todos os livros cadastrados.
+
+OBS: use métodos de vetor como push() e forEach(). -->
+<div>
+    <h1>Cadastro de Livros</h1>
+    Título:<input type="text" id="titulo"> <br>
+    Autor:<input type="text" id="autor"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <p id="mensagem"></p>
+    <button onclick="exibirLivros()">Exibir livros</button>
+    <ul id="listaLivros"></ul>
+</div>
+<script>
+    const livros = [];
+    const tituloInput = document.getElementById('titulo');
+    const autorInput = document.getElementById('autor');
+    const mensagem = document.getElementById('mensagem');
+    const listaLivrosElement = document.getElementById('listaLivros');
+    function cadastrar() {
+        const titulo = tituloInput.value;
+        const autor = autorInput.value;
+        
+        if (titulo && autor) {
+            livros.push({ titulo, autor });
+            mensagem.innerHTML = `Livro "${titulo}" de ${autor} cadastrado com sucesso!`;
+        } else {
+            mensagem.innerHTML = 'Por favor, preencha todos os campos.';
+        }
+    }
+    function exibirLivros() {
+        listaLivrosElement.innerHTML = '';
+        if (livros.length === 0) {
+            mensagem.innerHTML = 'Nenhum livro cadastrado.';
+        } else {
+            livros.forEach(({ titulo, autor }) => {
+                listaLivrosElement.innerHTML += `<li>${titulo} - ${autor}</li>`;
+            });
+            mensagem.innerHTML = '';
+        }
+    }
+</script>
+</body>
+</html>

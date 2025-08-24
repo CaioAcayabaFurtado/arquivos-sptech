@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 1. (Lista de Compras) Crie um programa o qual:
+
+a) Solicite o nome do item e a quantidade que será comprada;
+
+b) Ao clicar em "Adicionar à lista", armazene o item em um vetor e exiba "99x de NOME_DO_PRODUTO adicionado com sucesso!", abaixo do botão;
+
+c) Ao clicar em "Exibir lista", mostre todos os itens cadastrados com suas quantidades, um abaixo do outro.
+
+OBS: obrigatoriamente use vetor. -->
+<div>
+    <h1>Lista de Compras</h1>
+    Item:<input type="text" id="item"> <br>
+    Quantidade<input type="number" id="quantidade"><br>
+    <button onclick="adicionar()">Adicionar à lista</button>
+    <p id="mensagem"></p>
+    <button onclick="exibir()">Exibir lista</button>
+    <ul id="lista"></ul>
+</div>
+<script>
+    const listaCompras = [];
+    const itemInput = document.getElementById('item');
+    const quantidadeInput = document.getElementById('quantidade');
+    const mensagem = document.getElementById('mensagem');
+    const listaElement = document.getElementById('lista');
+
+    function adicionar() {
+        const item = itemInput.value.trim();
+        const quantidade = parseInt(quantidadeInput.value, 10);
+        
+        if (item && quantidade > 0) {
+            listaCompras.push({ item, quantidade });
+            mensagem.textContent = `${quantidade}x de ${item} adicionado com sucesso!`;
+        } else {
+            mensagem.textContent = 'Por favor, insira um item válido e uma quantidade maior que zero.';
+        }
+    }
+    function exibir() {
+        listaElement.innerHTML = '';
+        if (listaCompras.length === 0) {
+            mensagem.textContent = 'A lista está vazia.';
+        } else {
+            listaCompras.forEach(({ item, quantidade }) => {
+                listaElement.innerHTML += `${quantidade}x de ${item} <br>`;
+            });
+            mensagem.textContent = '';
+        }
+    };
+</script>
+</body>
+</html>

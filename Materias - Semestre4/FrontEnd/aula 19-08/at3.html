@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- 3. (Ranking de Jogos) Crie um programa o qual:
+
+a) O usuário informa o nome do jogo e a pontuação;
+
+b) Ao clicar em "Adicionar", cadastre no vetor;
+
+c) Ao clicar em "Mostrar ranking", exiba os jogos ordenados da maior para a menor pontuação;
+
+d) Mostre o jogo com maior pontuação.
+
+OBS: utilize push(), sort() e at(). -->
+
+    <h1>Ranking de Jogos</h1>
+    <input type="text" id="nomeInput" placeholder="nome">
+    <input type="text" id="pontosInput" placeholder="pontuacao">
+    <button onclick="adicionar()">Adicionar</button> <br>
+    <button onclick="mostrar()">Mostrar Ranking</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    nomeInput = nomeInput.value
+    pontosInput = Number(pontosInput.value)
+    mensagem= document.getElementById("mensagem")
+    lista = []
+    function adicionar(){
+        if (nomeInput && pontosInput){
+            lista.push({nomeInput, pontosInput})
+        }
+    }
+    function mostrar(){
+        lista.sort((a,b) => b.pontosInput - a.pontosInput)
+        mensagem.innerHTML = `O jogo com maior pontuação é ${lista.at(0).nomeInput} com ${lista.at(0).pontosInput} pontos. <br> Ranking: <br>`
+        for (let i=0; i<lista.length; i++){
+            mensagem.innerHTML += `${i+1}° - ${lista[i].nomeInput} - ${lista[i].pontosInput} pontos <br>`
+        }
+    }
+</script>
+</html>
