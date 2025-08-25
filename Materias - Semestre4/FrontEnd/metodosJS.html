@@ -57,15 +57,69 @@ numeros.filter((elemento, indice, array) => {
    - Exemplo:
      [1,2,3].join('-'); // "1-2-3"
 
-7) slice()
-   - Retorna parte do array (não altera o original).
-   - Exemplo:
-     [1,2,3,4].slice(1,3); // [2,3]
 
+===========================================
+     SLICE() vs SPLICE() em Arrays JS
+===========================================
+
+📌 Embora os nomes sejam parecidos, eles funcionam de formas diferentes:
+
+-------------------------------------------
+7) slice()
+-------------------------------------------
+- NÃO altera o array original.
+- Serve para "fatiar" (copiar parte de um array).
+- Sintaxe: array.slice(inicio, fim)
+
+⚡ Exemplo:
+let arr = [10, 20, 30, 40, 50];
+
+let parte = arr.slice(1, 3);
+console.log(parte); // [20, 30]
+console.log(arr);   // [10, 20, 30, 40, 50]  (original continua igual)
+
+➡️ Dica: 
+- O "fim" é EXCLUSIVO (não inclui o índice final).
+- Para clonar todo o array: arr.slice()
+
+-------------------------------------------
 8) splice()
-   - Adiciona, remove ou substitui elementos (altera o array).
-   - Exemplo:
-     [1,2,3].splice(1,1,'x'); // [1,'x',3]
+-------------------------------------------
+- ALTERA o array original.
+- Serve para remover, substituir ou adicionar elementos.
+- Sintaxe: array.splice(inicio, quantidade, item1, item2, ...)
+
+⚡ Exemplo 1 (remover):
+let arr = [10, 20, 30, 40, 50];
+arr.splice(1, 2);  
+console.log(arr); // [10, 40, 50]
+
+➡️ Removeu 2 elementos a partir do índice 1 → (20, 30).
+
+⚡ Exemplo 2 (substituir):
+let arr = [10, 20, 30];
+arr.splice(1, 1, 99);
+console.log(arr); // [10, 99, 30]
+
+➡️ Removeu 1 elemento no índice 1 (20) e colocou 99 no lugar.
+
+⚡ Exemplo 3 (adicionar sem remover):
+let arr = [10, 20, 30];
+arr.splice(1, 0, 15, 17);
+console.log(arr); // [10, 15, 17, 20, 30]
+
+➡️ Removeu 0 elementos e adicionou 15 e 17 no índice 1.
+
+-------------------------------------------
+✅ Resumindo
+-------------------------------------------
+- slice() → faz uma cópia parcial, NÃO altera o original.
+- splice() → altera o array: pode REMOVER, TROCAR ou ADICIONAR elementos.
+
+===========================================
+FIM DO TUTORIAL (slice vs splice)
+===========================================
+
 
 9) indexOf()
    - Retorna o índice da primeira ocorrência do elemento.
