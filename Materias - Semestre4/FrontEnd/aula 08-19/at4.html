@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 4. (Controle de Estoque) Crie um programa o qual:
+a) O usuário informa o produto e a quantidade em estoque;
+b) Ao clicar em "Adicionar produto", armazene em um vetor;
+c) Permita filtrar produtos com quantidade menor que um valor informado pelo usuário;
+d) Exiba os produtos filtrados em uma lista.
+OBS: use push(), filter() e forEach(). -->
+
+    <h1>Controle de Estoque</h1>
+    Produto: <input type="text" id="produtoInput" placeholder="produto">
+    Quantidade: <input type="number" id="quantidadeInput" placeholder="quantidade">
+    <button onclick="adicionar()">Adicionar produto</button> <br><br>
+    Filtrar produtos com quantidade menor que: <input type="number" id="filtroInput" placeholder="quantidade">
+    <button onclick="filtrar()">Filtrar</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const produtoInput = document.getElementById("produtoInput")
+    const quantidadeInput = document.getElementById("quantidadeInput")
+    const filtroInput = document.getElementById("filtroInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function adicionar() {
+        const produto = produtoInput.value
+        const quantidade = Number(quantidadeInput.value)
+        if (produto && quantidade > 0) {
+            lista.push({ produto, quantidade })
+            mensagem.innerHTML = `Produto ${produto} com quantidade ${quantidade} adicionado com sucesso!`
+        }
+    }
+    function filtrar() {
+        const filtro = Number(filtroInput.value)
+        const filtrados = lista.filter(({ quantidade }) => quantidade < filtro)
+        if (filtrados.length === 0) {
+            mensagem.innerHTML = 'Nenhum produto encontrado com a quantidade menor que o valor informado.'
+        } else {
+            mensagem.innerHTML = 'Produtos filtrados: <br>'
+            filtrados.forEach(({ produto, quantidade }) => {
+                mensagem.innerHTML += `${produto} - ${quantidade} <br>`
+            })
+        }
+    }
+</script>
+
+</html>

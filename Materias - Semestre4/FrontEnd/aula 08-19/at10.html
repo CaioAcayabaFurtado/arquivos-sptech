@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 10. (Sistema de Votação de Atividades) Crie um programa o qual:
+a) O usuário seleciona uma atividade favorita (ex: corrida, natação, yoga);
+b) Ao clicar em "Votar", adicione o voto no vetor;
+c) Ao clicar em "Resultado", mostre a quantidade de votos para cada atividade;
+d) Exiba a atividade mais votada com uma frase especial.
+OBS: use push(), reduce(), map() e forEach(). -->
+    <h1>Sistema de Votação de Atividades</h1>
+    Atividade favorita: 
+    <select id="atividadeInput">
+        <option value="Corrida">Corrida</option>
+        <option value="Natação">Natação</option>
+        <option value="Yoga">Yoga</option>
+        <option value="Ciclismo">Ciclismo</option>
+        <option value="Musculação">Musculação</option>
+    </select>
+    <button onclick="votar()">Votar</button> <br><br>
+    <button onclick="resultado()">Resultado</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const atividadeInput = document.getElementById("atividadeInput")
+    const mensagem = document.getElementById("mensagem")
+    const votos = []
+    function votar() {
+        const atividade = atividadeInput.value
+        votos.push(atividade)
+        mensagem.innerHTML = `Voto para ${atividade} registrado com sucesso!`
+    }
+    function resultado() {
+        if (votos.length === 0) {
+            mensagem.innerHTML = 'Nenhum voto registrado.'
+            return
+        }
+        const contagem = votos.reduce((acc, atividade) => {
+            acc[atividade] = (acc[atividade] || 0) + 1
+            return acc
+        }, {})
+        mensagem.innerHTML = 'Resultado da votação: <br>'
+        Object.entries(contagem).forEach(([atividade, quantidade]) => {
+            mensagem.innerHTML += `${atividade}: ${quantidade} votos <br>`
+        })
+        const maisVotada = Object.entries(contagem).reduce((max, entry) => entry[1] > max[1] ? entry : max)
+        mensagem.innerHTML += `<br>A atividade mais votada é ${maisVotada[0]} com ${maisVotada[1]} votos!`
+    }
+</script>
+</html>

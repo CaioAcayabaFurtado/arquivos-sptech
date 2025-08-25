@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 6. (Cadastro de Receitas) Crie um programa o qual:
+a) O usuário informa o nome da receita e tempo de preparo;
+b) Ao clicar em "Cadastrar", adicione no vetor;
+c) Ao clicar em "Filtrar por tempo", exiba apenas as receitas com tempo menor ou igual ao informado;
+d) Mostre a lista filtrada abaixo do botão.
+OBS: use push(), filter() e forEach(). -->
+    <h1>Cadastro de Receitas</h1>
+    Receita: <input type="text" id="receitaInput" placeholder="receita">
+    Tempo de preparo (minutos): <input type="number" id="tempoInput" placeholder="tempo">
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+    Filtrar receitas com tempo menor ou igual a: <input type="number" id="filtroInput" placeholder="tempo">
+    <button onclick="filtrar()">Filtrar por tempo</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const receitaInput = document.getElementById("receitaInput")
+    const tempoInput = document.getElementById("tempoInput")
+    const filtroInput = document.getElementById("filtroInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function cadastrar() {
+        const receita = receitaInput.value
+        const tempo = Number(tempoInput.value)
+        if (receita && tempo > 0) {
+            lista.push({ receita, tempo })
+            mensagem.innerHTML = `Receita ${receita} com tempo de preparo ${tempo} minutos cadastrada com sucesso!`
+        }
+    }
+    function filtrar() {
+        const filtro = Number(filtroInput.value)
+        const filtrados = lista.filter(({ tempo }) => tempo <= filtro)
+        if (filtrados.length === 0) {
+            mensagem.innerHTML = 'Nenhuma receita encontrada com o tempo menor ou igual ao valor informado.'
+        } else {
+            mensagem.innerHTML = 'Receitas filtradas: <br>'
+            filtrados.forEach(({ receita, tempo }) => {
+                mensagem.innerHTML += `${receita} - ${tempo} minutos <br>`
+            })
+        }   
+    }
+</script>
+</html>

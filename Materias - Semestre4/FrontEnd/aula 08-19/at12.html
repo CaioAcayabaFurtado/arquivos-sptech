@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 12. (Lista de Produtos com Estoque e Preço) Crie um programa que:
+a) O usuário informa produtos com nome, preço e quantidade em estoque;
+b) Armazene os produtos em um vetor de objetos com nome, preço e quantidade;
+c) Ao clicar em “Produtos em promoção”, o programa deve:
+Filtrar produtos com preço menor que um valor informado (filter)
+Aplicar um desconto de 10% no preço de cada produto filtrado (map)
+Ordenar os produtos pelo preço final em ordem crescente (sort)
+Exibir o nome e preço final dos produtos formatados.
+Desafio adicional: Calcular o total do estoque em valor monetário usando reduce.
+OBS: use push(), filter(), map(), sort(), reduce(). -->
+    <h1>Lista de Produtos com Estoque e Preço</h1>
+    Nome do produto: <input type="text" id="nomeInput" placeholder="nome">
+    Preço: <input type="number" id="precoInput" placeholder="preço">
+    Quantidade em estoque: <input type="number" id="quantidadeInput" placeholder="quantidade">
+    <button onclick="cadastrar()">Cadastrar produto</button> <br><br>
+    Filtrar produtos com preço menor que: <input type="number" id="filtroInput" placeholder="preço">
+    <button onclick="promocao()">Produtos em promoção</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const nomeInput = document.getElementById("nomeInput")
+    const precoInput = document.getElementById("precoInput")
+    const quantidadeInput = document.getElementById("quantidadeInput")
+    const filtroInput = document.getElementById("filtroInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function cadastrar() {
+        const nome = nomeInput.value
+        const preco = Number(precoInput.value)
+        const quantidade = Number(quantidadeInput.value)
+        if (nome && preco > 0 && quantidade > 0) {
+            lista.push({ nome, preco, quantidade })
+            mensagem.innerHTML = `Produto ${nome} com preço ${preco} e quantidade ${quantidade} cadastrado com sucesso!`
+        }
+    }
+    function promocao() {
+        const filtro = Number(filtroInput.value)
+        const promocao = lista
+            .filter(({ preco }) => preco < filtro)
+            .map(({ nome, preco, quantidade }) => ({ nome, preco: (preco * 0.9).toFixed(2), quantidade }))
+            .sort((a, b) => a.preco - b.preco)
+        if (promocao.length === 0) {
+            mensagem.innerHTML = 'Nenhum produto encontrado com o preço menor que o valor informado.'
+        } else {
+            const totalEstoque = promocao.reduce((acc, { preco, quantidade }) => acc + (preco * quantidade), 0).toFixed(2)
+            mensagem.innerHTML = `Produtos em promoção: <br>${promocao.map(({ nome, preco }) => `${nome} - R$${preco}`).join('<br>')}<br>Total do estoque em valor monetário: R$${totalEstoque}`
+        }
+    }
+</script>
+</html>

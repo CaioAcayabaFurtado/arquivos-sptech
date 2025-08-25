@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 5. (Lista de Exercícios Físicos) Crie um programa o qual:
+a) O usuário informa o nome do exercício e a quantidade de repetições;
+b) Ao clicar em "Adicionar", adicione no vetor;
+c) Ao clicar em "Exibir exercícios", mostre todos os exercícios cadastrados;
+d) Permita ordenar os exercícios por quantidade de repetições.
+OBS: use push(), sort() e forEach(). -->
+
+    <h1>Lista de Exercícios Físicos</h1>
+    Exercício: <input type="text" id="exercicioInput" placeholder="exercício">
+    Repetições: <input type="number" id="repeticoesInput" placeholder="repetições">
+    <button onclick="adicionar()">Adicionar</button> <br><br>
+    <button onclick="exibir()">Exibir exercícios</button>
+    <button onclick="ordenar()">Ordenar por repetições</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const exercicioInput = document.getElementById("exercicioInput")
+    const repeticoesInput = document.getElementById("repeticoesInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function adicionar() {
+        const exercicio = exercicioInput.value
+        const repeticoes = Number(repeticoesInput.value)
+        if (exercicio && repeticoes > 0) {
+            lista.push({ exercicio, repeticoes })
+            mensagem.innerHTML = `Exercício ${exercicio} com ${repeticoes} repetições adicionado com sucesso!`
+        }
+    }
+    function exibir() {
+        if (lista.length === 0) {
+            mensagem.innerHTML = 'Nenhum exercício cadastrado.'
+        } else {
+            mensagem.innerHTML = 'Exercícios cadastrados: <br>'
+            lista.forEach(({ exercicio, repeticoes }) => {
+                mensagem.innerHTML += `${exercicio} - ${repeticoes} repetições <br>`
+            })
+        }
+    }
+    function ordenar() {
+        if (lista.length === 0) {
+            mensagem.innerHTML = 'Nenhum exercício cadastrado para ordenar.'
+        } else {
+            lista.sort((a, b) => a.repeticoes - b.repeticoes)
+            mensagem.innerHTML = 'Exercícios ordenados por repetições: <br>'
+            lista.forEach(({ exercicio, repeticoes }) => {
+                mensagem.innerHTML += `${exercicio} - ${repeticoes} repetições <br>`
+            })
+        }
+    }
+</script>
+</html>

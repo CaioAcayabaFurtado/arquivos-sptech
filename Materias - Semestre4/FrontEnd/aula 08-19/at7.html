@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 7. (Lista de Contatos) Crie um programa o qual:
+a) O usuário informa o nome e o telefone do contato;
+b) Ao clicar em "Adicionar contato", armazene em um vetor;
+c) Ao clicar em "Exibir contatos", liste todos em ordem alfabética;
+d) Permita remover um contato pelo nome.
+OBS: use push(), toSorted() e splice(). -->
+    <h1>Lista de Contatos</h1>
+    Nome: <input type="text" id="nomeInput" placeholder="nome">
+    Telefone: <input type="text" id="telefoneInput" placeholder="telefone">
+    <button onclick="adicionar()">Adicionar contato</button> <br><br>
+    <button onclick="exibir()">Exibir contatos</button> <br><br>
+    Remover contato pelo nome: <input type="text" id="removerInput" placeholder="nome">
+    <button onclick="remover()">Remover contato</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const nomeInput = document.getElementById("nomeInput")
+    const telefoneInput = document.getElementById("telefoneInput")
+    const removerInput = document.getElementById("removerInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function adicionar() {
+        const nome = nomeInput.value
+        const telefone = telefoneInput.value
+        if (nome && telefone) {
+            lista.push({ nome, telefone })
+            mensagem.innerHTML = `Contato ${nome} com telefone ${telefone} adicionado com sucesso!`
+        }
+    }
+    function exibir() {
+        if (lista.length === 0) {
+            mensagem.innerHTML = 'Nenhum contato cadastrado.'
+        } else {
+            const listaOrdenada = lista.toSorted((a, b) => a.nome.localeCompare(b.nome))
+            mensagem.innerHTML = 'Contatos cadastrados: <br>'
+            listaOrdenada.forEach(({ nome, telefone }) => {
+                mensagem.innerHTML += `${nome} - ${telefone} <br>`
+            })
+        }
+    }
+    function remover() {
+        const nomeParaRemover = removerInput.value
+        const index = lista.findIndex(({ nome }) => nome === nomeParaRemover)
+        if (index !== -1) {
+            lista.splice(index, 1)
+            mensagem.innerHTML = `Contato ${nomeParaRemover} removido com sucesso!`
+        } else {
+            mensagem.innerHTML = `Contato ${nomeParaRemover} não encontrado.`
+        }
+    }
+</script>
+</html>

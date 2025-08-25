@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 11. (Sistema de Controle de Notas com Ranking) Crie um programa que:
+a) O usuário cadastra alunos com nome e nota final;
+b) Armazene os alunos em um vetor de objetos { nome, nota };
+c) Ao clicar em “Exibir aprovados”, o programa deve:
+Filtrar alunos com nota ≥ 6 (filter)
+Ordenar do maior para o menor nota (sort)
+Exibir apenas os nomes e notas formatados com map
+Mostrar a lista abaixo do botão.
+Desafio adicional: Mostrar a média das notas aprovadas usando reduce.
+OBS: use push(), filter(), sort(), map(), reduce(). -->
+    <h1>Sistema de Controle de Notas com Ranking</h1>
+    Nome do aluno: <input type="text" id="nomeInput" placeholder="nome">
+    Nota final: <input type="number" id="notaInput" placeholder="nota">
+    <button onclick="cadastrar()">Cadastrar aluno</button> <br><br>
+    <button onclick="exibirAprovados()">Exibir aprovados</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const nomeInput = document.getElementById("nomeInput")
+    const notaInput = document.getElementById("notaInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function cadastrar() {
+        const nome = nomeInput.value
+        const nota = Number(notaInput.value)
+        if (nome && nota >= 0 && nota <= 10) {
+            lista.push({ nome, nota })
+            mensagem.innerHTML = `Aluno ${nome} com nota ${nota} cadastrado com sucesso!`
+        }
+    }
+    function exibirAprovados() {
+        const aprovados = lista
+            .filter(({ nota }) => nota >= 6)
+            .sort((a, b) => b.nota - a.nota)
+            .map(({ nome, nota }) => `${nome} - ${nota}`)
+        if (aprovados.length === 0) {
+            mensagem.innerHTML = 'Nenhum aluno aprovado.'
+        } else {
+            const media = aprovados.reduce((acc, curr) => acc + Number(curr.split(' - ')[1]), 0) / aprovados.length
+            mensagem.innerHTML = `Alunos aprovados: <br>${aprovados.join('<br>')}<br>Média das notas aprovadas: ${media.toFixed(2)}`
+        }
+    }
+</script>
+</html>

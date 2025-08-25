@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 9. (Lista de Filmes por Gênero) Crie um programa o qual:
+a) O usuário informa o nome do filme e o gênero;
+b) Ao clicar em "Cadastrar", armazene em vetor de objetos;
+c) Ao clicar em "Filtrar por gênero", mostre apenas os filmes do gênero selecionado.
+OBS: use push(), filter() e forEach(). -->
+    <h1>Lista de Filmes por Gênero</h1>
+    Filme: <input type="text" id="filmeInput" placeholder="filme">
+    Gênero: <input type="text" id="generoInput" placeholder="gênero">
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+    Filtrar filmes por gênero: <input type="text" id="filtroInput" placeholder="gênero">
+    <button onclick="filtrar()">Filtrar por gênero</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const filmeInput = document.getElementById("filmeInput")
+    const generoInput = document.getElementById("generoInput")
+    const filtroInput = document.getElementById("filtroInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function cadastrar() {
+        const filme = filmeInput.value
+        const genero = generoInput.value
+        if (filme && genero) {
+            lista.push({ filme, genero })
+            mensagem.innerHTML = `Filme ${filme} do gênero ${genero} cadastrado com sucesso!`
+        }
+    }
+    function filtrar() {
+        const filtro = filtroInput.value.toLowerCase()
+        const filtrados = lista.filter(({ genero }) => genero.toLowerCase() === filtro)
+        if (filtrados.length === 0) {
+            mensagem.innerHTML = 'Nenhum filme encontrado para o gênero informado.'
+        } else {
+            mensagem.innerHTML = 'Filmes filtrados: <br>'
+            filtrados.forEach(({ filme, genero }) => {
+                mensagem.innerHTML += `${filme} - ${genero} <br>`
+            })
+        }
+    }
+</script>
+</html>

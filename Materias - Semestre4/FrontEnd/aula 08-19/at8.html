@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 8. (Registro de Pesos) Crie um programa o qual:
+a) O usuário informa o peso diário;
+b) Ao clicar em "Adicionar peso", registre no vetor;
+c) Ao clicar em "Exibir histórico", mostre todos os pesos;
+d) Permita calcular a média dos pesos cadastrados.
+OBS: use push(), reduce() e forEach(). -->
+    <h1>Registro de Pesos</h1>
+    Peso: <input type="number" id="pesoInput" placeholder="peso">
+    <button onclick="adicionar()">Adicionar peso</button> <br><br>
+    <button onclick="exibir()">Exibir histórico</button>
+    <button onclick="calcularMedia()">Calcular média</button>
+    <p id="mensagem"></p>
+</body>
+<script>
+    const pesoInput = document.getElementById("pesoInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function adicionar() {
+        const peso = Number(pesoInput.value)
+        if (peso > 0) {
+            lista.push(peso)
+            mensagem.innerHTML = `Peso ${peso} adicionado com sucesso!`
+        }
+    }
+    function exibir() {
+        if (lista.length === 0) {
+            mensagem.innerHTML = 'Nenhum peso cadastrado.'
+        } else {
+            mensagem.innerHTML = 'Histórico de pesos: <br>'
+            lista.forEach((peso, index) => {
+                mensagem.innerHTML += `Dia ${index + 1}: ${peso} kg <br>`
+            })
+        }
+    }
+    function calcularMedia() {
+        if (lista.length === 0) {
+            mensagem.innerHTML = 'Nenhum peso cadastrado para calcular a média.'
+        } else {
+            const soma = lista.reduce((acumulador, peso) => acumulador + peso, 0)
+            const media = soma / lista.length
+            mensagem.innerHTML = `Média dos pesos cadastrados: ${media.toFixed(2)} kg`
+        }
+    }
+</script>
+</html>

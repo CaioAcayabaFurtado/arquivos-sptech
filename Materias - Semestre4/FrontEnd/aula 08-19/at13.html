@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 13. (Ranking de Filmes por Avaliação) Crie um programa que:
+a) O usuário cadastra filmes com nome, gênero e nota de avaliação;
+b) Armazene os filmes em um vetor de objetos { nome, genero, nota };
+c) Ao clicar em “Top Filmes Ação”, o programa deve:
+Filtrar apenas filmes do gênero “Ação” (filter)
+Ordenar por nota da maior para a menor (sort)
+Criar uma lista de frases formatadas como "Filme: X | Nota: Y" (map)
+Exibir os top 5 filmes com maior nota
+Desafio adicional: Calcular a média das notas dos filmes de ação usando reduce.
+OBS: use push(), filter(), sort(), map(), slice(), reduce(). -->
+    <h1>Ranking de Filmes por Avaliação</h1>
+    Nome do filme: <input type="text" id="nomeInput" placeholder="nome">
+    Gênero: <input type="text" id="generoInput" placeholder="gênero">
+    Nota de avaliação: <input type="number" id="notaInput" placeholder="nota">
+    <button onclick="cadastrar()">Cadastrar filme</button> <br><br>
+    <button onclick="topAcao()">Top Filmes Ação</button>
+    <p id="mensagem"></p>
+<script>
+    const nomeInput = document.getElementById("nomeInput")
+    const generoInput = document.getElementById("generoInput")
+    const notaInput = document.getElementById("notaInput")
+    const mensagem = document.getElementById("mensagem")
+    const lista = []
+    function cadastrar() {
+        const nome = nomeInput.value
+        const genero = generoInput.value
+        const nota = Number(notaInput.value)
+        if (nome && genero && nota >= 0 && nota <= 10) {
+            lista.push({ nome, genero, nota })
+            mensagem.innerHTML = `Filme ${nome} do gênero ${genero} com nota ${nota} cadastrado com sucesso!`
+        }
+    }
+    function topAcao() {
+        const topFilmes = lista
+            .filter(({ genero }) => genero.toLowerCase() === 'ação')
+            .sort((a, b) => b.nota - a.nota)
+            .map(({ nome, nota }) => `Filme: ${nome} | Nota: ${nota}`)
+            .slice(0, 5)
+        if (topFilmes.length === 0) {
+            mensagem.innerHTML = 'Nenhum filme de ação encontrado.'
+        } else {
+            const media = topFilmes.reduce((acc, curr) => acc + Number(curr.split(' | Nota: ')[1]), 0) / topFilmes.length
+            mensagem.innerHTML = `Top Filmes de Ação: <br>${topFilmes.join('<br>')}<br>Média das notas dos filmes de ação: ${media.toFixed(2)}`
+        }
+    }
+</script>
+    
+</body>
+</html>
