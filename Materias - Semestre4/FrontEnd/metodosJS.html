@@ -205,10 +205,75 @@ FIM DO TUTORIAL (slice vs splice)
 OUTROS MÉTODOS IMPORTANTES
 -------------------------------------------
 
-21) sort()
-    - Ordena elementos (altera o array).
-    - Exemplo:
-      [3,1,2].sort(); // [1,2,3]
+===========================================
+          TUTORIAL DE .SORT() EM JS
+===========================================
+
+📌 O método .sort() serve para ordenar os elementos de um array.
+⚠️ Atenção: por padrão, ele ordena como STRINGS, mesmo que os elementos sejam números.
+
+-------------------------------------------
+1) Ordenação básica de strings
+-------------------------------------------
+let frutas = ["banana", "maçã", "laranja", "uva"];
+frutas.sort();
+console.log(frutas);
+// Saída: [ 'banana', 'laranja', 'maçã', 'uva' ]
+// ✔️ Ordenação alfabética
+// ❌ Strings com acentos podem não ficar na ordem esperada
+// Use localeCompare para ordenação correta de textos com acento.
+
+-------------------------------------------
+2) Problema comum com números
+-------------------------------------------
+let numeros = [10, 1, 30, 4, 20];
+numeros.sort();
+console.log(numeros);
+// Saída: [ 1, 10, 20, 30, 4 ]
+// ❌ Ordenou como string → "10", "1", "30", "4", "20"
+
+-------------------------------------------
+3) Solução com função de comparação
+-------------------------------------------
+// Crescente
+let numerosCrescente = [10, 1, 30, 4, 20];
+numerosCrescente.sort((a, b) => a - b);
+console.log(numerosCrescente); // [1, 4, 10, 20, 30]
+
+// Decrescente
+let numerosDecrescente = [10, 1, 30, 4, 20];
+numerosDecrescente.sort((a, b) => b - a);
+console.log(numerosDecrescente); // [30, 20, 10, 4, 1]
+
+-------------------------------------------
+4) Ordenando objetos
+-------------------------------------------
+let pessoas = [
+  { nome: "Caio", idade: 21 },
+  { nome: "Ana", idade: 19 },
+  { nome: "Bruno", idade: 25 }
+];
+
+// Ordenar por idade (crescente)
+pessoas.sort((a, b) => a.idade - b.idade);
+console.log(pessoas); // [ Ana:19, Caio:21, Bruno:25 ]
+
+// Ordenar por nome (alfabética)
+pessoas.sort((a, b) => a.nome.localeCompare(b.nome));
+console.log(pessoas); // [ Ana, Bruno, Caio ]
+// ✔️ localeCompare respeita acentos e regras do idioma
+
+-------------------------------------------
+✅ DICAS IMPORTANTES
+-------------------------------------------
+1) sort() sozinho → ordena como string.
+2) Números → sempre usar função de comparação (a - b ou b - a).
+3) Objetos → comparar a propriedade desejada.
+4) Strings com acento → usar localeCompare().
+
+===========================================
+FIM DO TUTORIAL .SORT()
+===========================================
 
 22) reverse()
     - Inverte a ordem dos elementos (altera o array).
