@@ -1,0 +1,107 @@
+& body{
+    background-color: #121212;
+    padding: 30px 160px;
+    font-family: sans-serif;
+    color: #FFF;
+
+    & p{
+        margin: 0;
+    }
+    & h1{
+        margin: 0;
+    }
+    & input{
+        border: none;
+        height: 40px;
+        width: 33%;
+        border-radius: 8px;
+    }
+}
+
+
+.crud_bar{
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.input_line {
+    width: 100%;
+    height: 50px;
+    /* background-color: #FFF; */
+    border-radius: 8px;
+    /* margin-top: 20px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.add{
+    border: none;
+    background-color: #1ED760;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+}
+.add:hover{
+    cursor: pointer;
+    background-color: #1AA34A;
+}
+
+.alter{
+    border: none;
+    background: none;
+    color: #FFF;
+}
+.alter:hover{
+    cursor: pointer;
+    filter: brightness(0.8);
+}
+
+.playlist{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.card{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.music_info{
+    width: 100%;
+    height: 80px;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 30px;
+}
+
+.delete_icon{
+    width: 20px;
+    height: 20px;
+}
+
+.delete_icon:hover{
+    cursor: pointer;
+    filter: brightness(0.8);
+}

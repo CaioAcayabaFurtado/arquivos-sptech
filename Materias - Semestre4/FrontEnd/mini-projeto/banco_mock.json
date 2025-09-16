@@ -1,0 +1,14 @@
+{
+  "musicas": [
+    {
+      "id": 1,
+      "nome": "Lança Perfume",
+      "link": "https://open.spotify.com/track/0rAX31FT5w3ZQbQMUSkxy8?si=dfe9f7af7ffe4004"
+    },
+    {
+      "id": 2,
+      "nome": "O Descobridor Dos 7 Mares",
+      "link": "https://open.spotify.com/track/6wpDQGn3Gl0j9Wt6D6mYvQ?si=8e2c412c079848e0"
+    }
+  ]
+}

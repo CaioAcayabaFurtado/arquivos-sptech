@@ -1,0 +1,105 @@
+<!-- json-server --watch banco_mock.json --port 8080 -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./assets/Spotify_logo_without_text.svg.png" type="image/x-icon" />
+    <title>Splotify</title>
+</head>
+<body onload="mostrar()">
+    <div style="display: flex; flex-direction: column; gap: 0px !important;">
+        <h1>Bem vindo ao Splotify!</h1>
+        <p><i>Gerencie aqui sua playlist favorita :)</i></p>
+    </div>
+    <div class="crud_bar">
+        <div class="input_line">
+            <b>ID:</b><input type="text" placeholder="ID" id="id" />
+            <b>Nome:</b><input type="text" placeholder="Nome da música" id="nome" />
+            <b>Link:</b><input type="text" placeholder="Link" id="link"/>
+        </div>
+        <button class="add" onclick="adicionar()"><b>Adicionar</b></button>
+        <button class="alter" onclick="alterar()"><b>Alterar</b></button>
+    </div>
+    <div class="playlist" id="lista"></div>
+</body>
+<script>
+    let musicas = [];
+
+    function mostrar() {
+        let mensagem = document.getElementById("lista");
+        fetch('http://localhost:8080/musicas', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((resposta) => resposta.json())
+            .then((dados) => {
+                musicas = dados
+                console.log(musicas)
+                const lista_mensagem = musicas.map((p) => `
+                    <div class="card">
+                        <div class="music_info">
+                            <div style="display: flex; flex-direction: row; gap: 40px;">
+                                <p><b>ID:</b> ${p.id}</p>
+                                <p><b>Nome:</b> ${p.nome}</p>
+                            </div>
+                            <a href="${p.link}" target="_blank" style="color:#1ED760;">Escutar</a>
+                        </div>
+                        <img src="./assets/bin.png" alt="delete" class="delete_icon" onclick="remover(${p.id})"/>
+                    </div>
+                `).join('')
+                mensagem.innerHTML = lista_mensagem
+            })
+            .catch((erro) => {
+                alert('Erro ao buscar musicas:', erro);
+            });
+    }
+
+    function adicionar() {
+        const nome = document.getElementById("nome").value;
+        const id = document.getElementById("id").value;
+        const link = document.getElementById("link").value;
+        fetch('http://localhost:8080/musicas', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id, nome, link })
+        })
+            .then((resposta) => resposta.json())
+            .then((dados) => mostrar())
+            .catch((erro) => {
+                alert('Erro ao adicionar pessoa:', erro)
+            })
+    }
+
+    function alterar() {
+        const nome = document.getElementById("nome").value;
+        const link = document.getElementById("link").value;
+        const id = document.getElementById("id").value;
+        fetch(`http://localhost:8080/musicas/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ nome, link })
+        })
+            .then((resposta) => resposta.json())
+            .then((dados) => mostrar())
+            .catch((erro) => alert('Erro ao alterar musica:', erro))
+    }
+
+    function remover(id) {
+        fetch(`http://localhost:8080/musicas/${id}`, {
+            method: 'DELETE'
+        })
+            .then((resposta) => resposta.json())
+            .then((dados) => mostrar())
+            .catch((erro) => alert('Erro ao remover musica:', erro))
+    }
+
+</script>
+</html>
