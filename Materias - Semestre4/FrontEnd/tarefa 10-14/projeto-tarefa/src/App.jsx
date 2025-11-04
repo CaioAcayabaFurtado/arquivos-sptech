@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import Calculadora from './components/Calculadora';
 import ListaTelefonica from './components/ListaTelefonica';
 import Contador from './components/Contador';
