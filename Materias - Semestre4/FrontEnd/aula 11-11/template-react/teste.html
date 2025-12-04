@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="empilhar()">empilhar</button>
+    <button onclick="desempilhar()">desempilhar</button>
+    <button onclick="ver()">ver Topo</button>
+    <button onclick="listar()">exibir</button>
+
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+
+    function pilha(tamanho) {
+        const vetor = Array.from({ length: tamanho });
+        let topo = -1;
+
+        function teste() {
+            console.log(cont++, ". Teste");
+        }
+
+        function isFull() {
+            return topo === tamanho - 1;
+        }
+
+        function push(info) {
+            if (!isFull()) {
+                vetor[++topo] = info;
+            }
+            return topo + 1
+        }
+
+        function isEmpty() {
+            return topo === -1;
+        }
+
+        function pop() {
+            if (isEmpty()) return undefined
+            const copiaElementoTopo = vetor[topo];
+            vetor[topo--] = undefined;
+            console.log("Topo: ", topo);
+            return copiaElementoTopo;
+        }
+
+        function peek() {
+            if (isEmpty()) return undefined
+            const copiaElementoTopo = vetor[topo];
+            console.log("Topo: ", topo);
+            return copiaElementoTopo;
+        }
+
+        function exibir() {
+            return vetor;
+        }
+
+        return {
+            push,
+            exibir,
+            pop,
+            isFull,
+            peek,
+            isEmpty
+        }
+    }
+
+    const Pilha = pilha(5);
+
+    function empilhar() {
+        if (Pilha.isFull()) {
+            div_mensagem.innerHTML = `A Pilha está cheia!`
+        } else {
+            const aleatorio = (Math.random() * 99 + 1).toFixed();
+            Pilha.push(aleatorio);
+            listar();
+        }
+    }
+
+    function desempilhar() {
+
+        if (Pilha.isEmpty()) {
+            div_mensagem.innerHTML = `A Pilha está vazia!`
+        } else {
+            const elementoRemovido = Pilha.pop();
+            listar();
+        }
+    }
+
+
+    function ver() {
+        if (Pilha.isEmpty()) {
+            div_mensagem.innerHTML = `A Pilha está vazia`
+        } else {
+            const elementoTopo = Pilha.peek()
+            div_mensagem.innerHTML = `Topo: ${elementoTopo}`
+        }
+    }
+
+    function listar() {
+        var mensagem = "";
+
+
+        Pilha.exibir().forEach((el, i) => {
+            mensagem += `${i + 1}. - ${el} <br>`
+        })
+
+        div_mensagem.innerHTML = mensagem;
+    }
+
+
+</script>
