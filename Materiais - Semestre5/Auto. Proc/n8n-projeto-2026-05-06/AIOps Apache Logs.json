@@ -1,0 +1,219 @@
+{
+  "name": "AIOps Apache Logs",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "59 23 * * *"
+            }
+          ]
+        }
+      },
+      "id": "157e6c96-e9a6-4052-99bb-40302560927d",
+      "name": "Agendamento Diário",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        576,
+        576
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const log = $input.first().json.stdout;\n\nconst linhasFiltradas = log\n  .split('\\n')\n  .filter(linha => \n    linha.includes('500') ||\n    linha.includes('error') ||\n    linha.includes('timeout') ||\n    linha.includes('warning')\n  )\n  .slice(0, 50);\n\nreturn [{\n  json: {\n    logs_filtrados: linhasFiltradas.join('\\n')\n  }\n}];"
+      },
+      "id": "2ffe91d2-8e75-4ede-b8ed-297f1d3f04b9",
+      "name": "Filtrar Logs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1088,
+        576
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer minha_chave_que_nao_tenho"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Você é um analista DevOps especializado em logs Apache e WordPress.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Analise os logs abaixo e identifique possíveis problemas, erros críticos e recomendações:\n\n{{$json.logs_filtrados}}\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "id": "2319f238-1df5-4d4b-a51e-e2410d1d19c9",
+      "name": "Analisar com IA",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1360,
+        576
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const resposta = $input.first().json.choices[0].message.content;\n\nreturn [{\n  json: {\n    texto: resposta\n  }\n}];"
+      },
+      "id": "117afb37-57c9-45c5-9c7f-123a67c45c13",
+      "name": "Converter TXT",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1616,
+        576
+      ]
+    },
+    {
+      "parameters": {
+        "fileName": "/tmp/analise_logs.txt",
+        "dataPropertyName": "texto",
+        "options": {}
+      },
+      "id": "0d3fcf01-b588-4e32-9faf-5fd8d940d099",
+      "name": "Salvar Analise TXT",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1856,
+        576
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        1360,
+        800
+      ],
+      "id": "911bd764-32b5-460d-9473-e641342c9497",
+      "name": "Salvar Backup"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.compression",
+      "typeVersion": 1.1,
+      "position": [
+        1088,
+        800
+      ],
+      "id": "fc535d66-5651-49f5-b9a3-8e0fe268f613",
+      "name": "Comprimir Logs"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        816,
+        576
+      ],
+      "id": "05b7383f-25fc-4ab4-bf09-89740070c7d0",
+      "name": "Ler Log Apache"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Filtrar Logs": {
+      "main": [
+        [
+          {
+            "node": "Analisar com IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analisar com IA": {
+      "main": [
+        [
+          {
+            "node": "Converter TXT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Converter TXT": {
+      "main": [
+        [
+          {
+            "node": "Salvar Analise TXT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agendamento Diário": {
+      "main": [
+        [
+          {
+            "node": "Ler Log Apache",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Comprimir Logs": {
+      "main": [
+        [
+          {
+            "node": "Salvar Backup",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ler Log Apache": {
+      "main": [
+        [
+          {
+            "node": "Filtrar Logs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Comprimir Logs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "a165dc47-15db-4057-848c-b86550c457fd",
+  "meta": {
+    "instanceId": "36a3328f54a27df15d08780d211eef9439ed90a9196ca61aa8220107664ef538"
+  },
+  "id": "2qC4vTFH2cuow5w3",
+  "tags": []
+}

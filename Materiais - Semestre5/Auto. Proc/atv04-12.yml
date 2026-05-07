@@ -1,0 +1,103 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Stack simples EC2 com Nginx
+
+Resources:
+
+  # ---------------- VPC ----------------
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 192.168.0.0/20
+      Tags:
+        - Key: Name
+          Value: 03241026-CAIO_ACAYABA-VPC
+
+  # ---------------- SUBNET ----------------
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 192.168.0.0/24
+      AvailabilityZone: us-east-1a
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: 03241026-CAIO_ACAYABA-Subnet
+
+  # ---------------- INTERNET GATEWAY ----------------
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: 03241026-CAIO_ACAYABA-IGW
+
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+  # ---------------- ROUTE TABLE ----------------
+  RouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+
+  PublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    Properties:
+      RouteTableId: !Ref RouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  AssocSubnet:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet
+      RouteTableId: !Ref RouteTable
+
+  # ---------------- SECURITY GROUP ----------------
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Acesso HTTP e SSH
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: 03241026-CAIO_ACAYABA-SG
+
+  # ---------------- EC2 ----------------
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.large
+      ImageId: ami-0c02fb55956c7d316 # Amazon Linux (mais seguro pra lab)
+      SubnetId: !Ref PublicSubnet
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 20
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          amazon-linux-extras install nginx1 -y
+          systemctl start nginx
+          systemctl enable nginx
+          echo "<h1>Servidor Nginx rodando - Caio Acayaba</h1>" > /usr/share/nginx/html/index.html
+      Tags:
+        - Key: Name
+          Value: 03241026-CAIO_ACAYABA-EC2
