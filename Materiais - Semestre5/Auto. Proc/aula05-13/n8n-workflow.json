@@ -1,0 +1,52 @@
+{
+  "name": "Create EC2 via Lambda",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "start-ec2",
+        "responseMode": "onReceived",
+        "responseData": "firstEntryJson"
+      },
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "invoke",
+        "function": "REPLACE_WITH_CREATE_EC2_LAMBDA_NAME",
+        "region": "us-east-1",
+        "payload": "={{$json}}"
+      },
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Invoke Lambda",
+      "type": "n8n-nodes-base.awsLambda",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Invoke Lambda",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}

@@ -1,0 +1,361 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AIOps n8n stack on a single EC2 instance
+
+Parameters:
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: sptech_key
+    Description: Name of an existing EC2 KeyPair to enable SSH
+  InstanceType:
+    Type: String
+    Default: t3.large
+  AmiId:
+    Type: AWS::EC2::Image::Id
+    Default: ami-0c02fb55956c7d316
+  VpcCidr:
+    Type: String
+    Default: 10.0.0.0/22
+  PublicSubnetCidr:
+    Type: String
+    Default: 10.0.1.0/24
+  AllowedSshCidr:
+    Type: String
+    Default: 0.0.0.0/0
+  ChildTemplateKey:
+    Type: String
+    Default: simple-ec2.yaml
+    Description: S3 object key for the child EC2 template
+  ChildStackName:
+    Type: String
+    Default: simple-ec2-stack
+    Description: CloudFormation stack name for the child EC2 template
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCidr
+      Tags:
+        - Key: Name
+          Value: aiops-vpc
+
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref PublicSubnetCidr
+      AvailabilityZone: !Select [0, !GetAZs '']
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: aiops-public-subnet
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: aiops-igw
+
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+  RouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: aiops-rt-public
+
+  PublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    Properties:
+      RouteTableId: !Ref RouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  AssocSubnet:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet
+      RouteTableId: !Ref RouteTable
+
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: AIOps n8n access
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref AllowedSshCidr
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 5678
+          ToPort: 5678
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: aiops-sg
+
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !Ref AmiId
+      KeyName: !Ref KeyName
+      SubnetId: !Ref PublicSubnet
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 20
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          set -e
+          yum update -y
+          amazon-linux-extras install docker -y
+          systemctl enable docker
+          systemctl start docker
+          usermod -aG docker ec2-user
+
+          curl -L "https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          chmod +x /usr/local/bin/docker-compose
+
+          mkdir -p /opt/n8n/local-files
+
+          cat <<'EOF' >/opt/n8n/docker-compose.yml
+          services:
+            db:
+              image: postgres:16-alpine
+              container_name: n8n_postgres
+              restart: always
+              environment:
+                - POSTGRES_USER=n8n_user
+                - POSTGRES_PASSWORD=urubu100
+                - POSTGRES_DB=n8n_database
+              volumes:
+                - postgres_data:/var/lib/postgresql/data
+              networks:
+                - n8n_network
+
+            pgadmin:
+              image: dpage/pgadmin4
+              container_name: n8n_pgadmin
+              restart: always
+              environment:
+                - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+                - PGADMIN_DEFAULT_PASSWORD=admin
+              ports:
+                - "8080:80"
+              depends_on:
+                - db
+              networks:
+                - n8n_network
+
+            n8n:
+              image: docker.n8n.io/n8nio/n8n
+              container_name: n8n_app
+              restart: always
+              ports:
+                - "80:5678"
+                - "5678:5678"
+              environment:
+                - DB_TYPE=postgresdb
+                - DB_POSTGRESDB_HOST=db
+                - DB_POSTGRESDB_PORT=5432
+                - DB_POSTGRESDB_DATABASE=n8n_database
+                - DB_POSTGRESDB_USER=n8n_user
+                - DB_POSTGRESDB_PASSWORD=urubu100
+                - N8N_BASIC_AUTH_ACTIVE=true
+                - N8N_BASIC_AUTH_USER=user
+                - N8N_BASIC_AUTH_PASSWORD=password
+                - N8N_HOST=${N8N_HOST}
+                - N8N_PORT=${N8N_PORT}
+                - N8N_PROTOCOL=${N8N_PROTOCOL}
+                - NODE_ENV=production
+                - N8N_BLOCK_NODES=
+                - N8N_BLOCK_FS_WRITE_ACCESS=false
+                - N8N_RESTRICT_FILE_ACCESS_TO=/home/node/files
+                - WEBHOOK_URL=${N8N_PROTOCOL}://${N8N_HOST}:80/
+                - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
+                - TZ=${GENERIC_TIMEZONE}
+                - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false
+                - N8N_SECURE_COOKIE=false
+              volumes:
+                - n8n_data:/home/node/.n8n
+                - ./local-files:/home/node/files:rw
+              depends_on:
+                - db
+              networks:
+                - n8n_network
+
+          networks:
+            n8n_network:
+              driver: bridge
+
+          volumes:
+            postgres_data:
+            n8n_data:
+          EOF
+
+          TOKEN=$(curl -sX PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+          PUBLIC_IP=$(curl -sH "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/public-ipv4)
+
+          cat <<EOF >/opt/n8n/.env
+          N8N_HOST=${PUBLIC_IP}
+          N8N_PROTOCOL=http
+          N8N_PORT=5678
+          GENERIC_TIMEZONE=America/Sao_Paulo
+          EOF
+
+          cd /opt/n8n
+          /usr/local/bin/docker-compose up -d
+      Tags:
+        - Key: Name
+          Value: aiops-n8n-ec2
+
+  TemplateBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      VersioningConfiguration:
+        Status: Enabled
+      Tags:
+        - Key: Name
+          Value: aiops-templates-bucket
+
+  SnsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: aiops-ec2-created
+
+  CreateEc2Lambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: python3.11
+      Handler: index.handler
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/LabRole
+      Timeout: 600
+      MemorySize: 256
+      Environment:
+        Variables:
+          TEMPLATE_BUCKET: !Ref TemplateBucket
+          TEMPLATE_KEY: !Ref ChildTemplateKey
+          STACK_NAME: !Ref ChildStackName
+          SNS_TOPIC_ARN: !Ref SnsTopic
+      Code:
+        ZipFile: |
+          import json
+          import os
+          import base64
+          import boto3
+          import botocore
+
+          s3 = boto3.client("s3")
+          cfn = boto3.client("cloudformation")
+          sns = boto3.client("sns")
+
+          def _get_template(bucket, key):
+              response = s3.get_object(Bucket=bucket, Key=key)
+              return response["Body"].read().decode("utf-8")
+
+          def _response(status_code, payload):
+              return {
+                  "statusCode": status_code,
+                  "headers": {"Content-Type": "application/json"},
+                  "body": json.dumps(payload),
+              }
+
+          def _parse_payload(event):
+              payload = event or {}
+              if isinstance(payload, dict) and "body" in payload:
+                  body = payload.get("body") or ""
+                  if payload.get("isBase64Encoded"):
+                      body = base64.b64decode(body).decode("utf-8")
+                  try:
+                      body_json = json.loads(body) if body else {}
+                  except json.JSONDecodeError:
+                      body_json = {}
+                  if isinstance(body_json, dict):
+                      payload = body_json
+              return payload
+
+          def handler(event, context):
+              payload = _parse_payload(event)
+              bucket = os.environ["TEMPLATE_BUCKET"]
+              key = os.environ["TEMPLATE_KEY"]
+              stack_name = payload.get("stack_name") or os.environ.get("STACK_NAME", "simple-ec2-stack")
+              parameters = payload.get("parameters") or []
+
+              template_body = _get_template(bucket, key)
+
+              try:
+                  cfn.create_stack(
+                      StackName=stack_name,
+                      TemplateBody=template_body,
+                      Parameters=parameters,
+                      Capabilities=["CAPABILITY_NAMED_IAM"],
+                  )
+              except botocore.exceptions.ClientError as exc:
+                  if "AlreadyExistsException" in str(exc):
+                      message = f"Stack {stack_name} already exists"
+                      sns.publish(
+                          TopicArn=os.environ["SNS_TOPIC_ARN"],
+                          Subject="EC2 stack not created",
+                          Message=message,
+                      )
+                      return _response(200, {"status": "exists", "stack_name": stack_name})
+                  return _response(400, {"status": "error", "message": str(exc)})
+
+              waiter = cfn.get_waiter("stack_create_complete")
+              waiter.wait(StackName=stack_name, WaiterConfig={"Delay": 15, "MaxAttempts": 40})
+
+              stack = cfn.describe_stacks(StackName=stack_name)["Stacks"][0]
+              outputs = {o["OutputKey"]: o["OutputValue"] for o in stack.get("Outputs", [])}
+              message = {
+                  "status": "created",
+                  "stack_name": stack_name,
+                  "outputs": outputs,
+              }
+              sns.publish(
+                  TopicArn=os.environ["SNS_TOPIC_ARN"],
+                  Subject="EC2 stack created",
+                  Message=json.dumps(message, indent=2),
+              )
+              return _response(200, message)
+
+Outputs:
+  InstanceId:
+    Value: !Ref EC2Instance
+  PublicIP:
+    Value: !GetAtt EC2Instance.PublicIp
+  N8nUrl:
+    Value: !Sub http://${EC2Instance.PublicIp}
+  N8nUrlAlt:
+    Value: !Sub http://${EC2Instance.PublicIp}:5678
+  PgAdminUrl:
+    Value: !Sub http://${EC2Instance.PublicIp}:8080
+  TemplateBucketName:
+    Value: !Ref TemplateBucket
+  CreateEc2LambdaName:
+    Value: !Ref CreateEc2Lambda
+  SnsTopicArn:
+    Value: !Ref SnsTopic

@@ -1,0 +1,601 @@
+Paciente_ID,Idade,Sexo,Regiao,Mes_Diagnostico,Tabagismo,Exposicao,Atividade_Fisica,Vacinado,Comorbidade,IMC,Dias_Sintomas,Marcador_Inflamatorio,Internacao,Desfecho_Grave
+1,38,Masculino,Norte,Abr,Não,Não exposto,Baixa,Não,Sim,36.4,6,4.16,Não,Não
+2,21,Feminino,Sul,Jun,Não,Não exposto,Alta,Sim,Não,26.7,8,4.59,Não,Não
+3,52,Masculino,Norte,Abr,Não,Não exposto,Alta,Sim,Não,27.8,4,4.05,Não,Não
+4,46,Feminino,Sul,Abr,Não,Não exposto,Baixa,Não,Sim,27.9,5,3.95,Não,Não
+5,72,Feminino,Leste,Mai,Não,Não exposto,Moderada,Sim,Não,23.0,4,3.29,Não,Não
+6,51,Masculino,Sul,Fev,Não,Não exposto,Baixa,Sim,Não,35.3,4,3.75,Não,Não
+7,31,Feminino,Norte,Abr,Sim,Exposto,Baixa,Sim,Sim,25.0,7,2.4,Não,Não
+8,18,Feminino,Oeste,Jan,Sim,Exposto,Moderada,Sim,Não,21.6,13,5.17,Não,Não
+9,57,Masculino,Norte,Abr,Sim,Exposto,Moderada,Não,Não,24.9,8,4.43,Não,Não
+10,40,Masculino,Sul,Mar,Não,Não exposto,Alta,Sim,Não,22.2,7,4.9,Não,Não
+11,45,Feminino,Leste,Abr,Sim,Exposto,Baixa,Sim,Não,27.9,10,4.09,Não,Não
+12,35,Masculino,Leste,Abr,Sim,Exposto,Moderada,Sim,Não,33.5,6,1.79,Não,Não
+13,18,Feminino,Oeste,Mar,Sim,Exposto,Moderada,Sim,Não,22.0,10,3.88,Não,Não
+14,62,Masculino,Sul,Mar,Não,Não exposto,Baixa,Sim,Sim,32.0,5,4.41,Não,Não
+15,55,Masculino,Norte,Mai,Não,Não exposto,Alta,Sim,Não,26.4,5,3.29,Não,Não
+16,50,Masculino,Centro,Mar,Não,Não exposto,Alta,Sim,Sim,20.4,8,3.99,Não,Não
+17,58,Masculino,Leste,Jun,Sim,Exposto,Baixa,Não,Não,28.0,2,2.52,Não,Não
+18,24,Feminino,Sul,Abr,Não,Não exposto,Baixa,Não,Sim,33.0,7,3.62,Não,Não
+19,81,Masculino,Oeste,Mai,Não,Não exposto,Moderada,Sim,Sim,29.6,9,1.14,Não,Não
+20,40,Feminino,Leste,Abr,Não,Não exposto,Moderada,Não,Não,24.9,6,5.14,Não,Não
+21,52,Feminino,Centro,Abr,Não,Não exposto,Alta,Sim,Não,19.4,7,4.41,Não,Não
+22,59,Feminino,Leste,Mar,Não,Não exposto,Alta,Sim,Sim,19.8,8,3.99,Não,Não
+23,18,Feminino,Leste,Abr,Sim,Exposto,Baixa,Sim,Não,29.0,11,4.0,Não,Não
+24,76,Feminino,Norte,Abr,Não,Não exposto,Alta,Sim,Sim,29.0,5,4.18,Não,Não
+25,47,Feminino,Norte,Mar,Não,Não exposto,Baixa,Sim,Sim,29.2,11,6.36,Sim,Não
+26,18,Masculino,Leste,Abr,Não,Não exposto,Moderada,Sim,Não,24.0,6,3.43,Não,Não
+27,39,Masculino,Oeste,Abr,Não,Não exposto,Moderada,Não,Não,,6,2.97,Não,Não
+28,90,Masculino,Centro,Mai,Não,Não exposto,Baixa,Não,Sim,29.9,6,5.81,Não,Não
+29,42,Masculino,Oeste,Abr,Não,Não exposto,Baixa,Sim,Não,28.1,10,4.87,Não,Não
+30,20,Masculino,Leste,Jan,Não,Não exposto,Baixa,Sim,Não,25.6,7,3.86,Não,Não
+31,43,Masculino,Oeste,Jun,Não,Não exposto,Moderada,Não,Sim,24.6,5,3.88,Não,Não
+32,53,Masculino,Leste,Abr,Não,Não exposto,Alta,Não,Não,27.6,2,2.39,Não,Não
+33,35,Masculino,Sul,Jan,Não,Não exposto,Moderada,Sim,Não,21.3,5,6.22,Não,Não
+34,35,Masculino,Sul,Mar,Não,Não exposto,Moderada,Sim,Não,32.2,7,3.31,Não,Não
+35,67,Masculino,Oeste,Abr,Não,Não exposto,Alta,Não,Não,19.4,10,3.57,Não,Não
+36,61,Feminino,Norte,Mar,Sim,Exposto,Baixa,Não,Não,37.9,6,3.33,Não,Não
+37,46,Masculino,Leste,Mai,Não,Não exposto,Baixa,Sim,Não,21.5,6,3.17,Não,Não
+38,45,Masculino,Leste,Mai,Não,Não exposto,Moderada,Sim,Sim,27.1,6,3.05,Não,Não
+39,49,Feminino,Norte,Jun,Sim,Exposto,Alta,Sim,Sim,27.5,9,3.4,Não,Não
+40,38,Feminino,Norte,Mai,Não,Não exposto,Moderada,Não,Sim,32.4,5,2.12,Não,Não
+41,46,Masculino,Norte,Mar,Não,Não exposto,Moderada,Sim,Não,30.0,8,4.91,Não,Não
+42,48,Masculino,Sul,Jan,Sim,Exposto,Alta,Sim,Não,29.7,8,4.92,Não,Não
+43,73,Masculino,Centro,Abr,Não,Não exposto,Baixa,Sim,Sim,22.4,12,5.33,Sim,Não
+44,25,Masculino,Norte,Mai,Não,Não exposto,Alta,Não,Não,21.9,8,3.97,Não,Não
+45,63,Masculino,Leste,Abr,Sim,Exposto,Baixa,Sim,Não,25.8,8,3.48,Não,Não
+46,76,Masculino,Norte,Fev,Não,Não exposto,Moderada,Não,Sim,28.4,10,4.38,Não,Não
+47,31,Feminino,Oeste,Fev,Não,Não exposto,Baixa,Sim,Sim,25.8,7,3.42,Não,Não
+48,49,Feminino,Oeste,Jan,Sim,Exposto,Alta,Não,Sim,26.2,11,5.09,Não,Não
+49,51,Masculino,Oeste,Abr,Sim,Exposto,Moderada,Sim,Sim,27.9,11,4.2,Sim,Não
+50,43,Feminino,Norte,Mar,Não,Não exposto,Alta,Não,Não,17.0,9,4.97,Não,Não
+51,37,Feminino,Leste,Fev,Não,Não exposto,Alta,Não,Sim,25.0,11,1.75,Não,Não
+52,28,Masculino,Leste,Mai,Não,Não exposto,Moderada,Sim,Não,25.8,4,6.78,Não,Não
+53,18,Masculino,Leste,Mai,Não,Não exposto,Moderada,Sim,Não,24.8,12,3.77,Não,Não
+54,56,Feminino,Oeste,Mai,Não,Não exposto,Moderada,Sim,Não,24.1,6,3.58,Não,Não
+55,18,Feminino,Norte,Mai,Não,Não exposto,Baixa,Sim,Sim,27.4,5,2.46,Não,Não
+56,55,Feminino,Norte,Abr,Não,Não exposto,Moderada,Sim,Sim,29.4,7,4.92,Não,Não
+57,62,Feminino,Centro,Fev,Não,Não exposto,Moderada,Não,Sim,22.8,12,3.22,Não,Não
+58,27,Masculino,Centro,Fev,Não,Não exposto,Baixa,Sim,Não,24.0,6,2.02,Não,Não
+59,56,Masculino,Centro,Jun,Não,Não exposto,Baixa,Sim,Sim,28.9,8,3.88,Não,Não
+60,59,Masculino,Centro,Jun,Não,Não exposto,Alta,Sim,Sim,23.1,5,2.05,Não,Não
+61,59,Feminino,Sul,Jan,Não,Não exposto,Alta,Sim,Não,19.2,6,2.59,Não,Não
+62,38,Feminino,Leste,Jun,Sim,Exposto,Moderada,Sim,Não,33.5,9,3.98,Não,Não
+63,52,Feminino,Sul,Mai,Não,Não exposto,Baixa,Sim,Sim,,4,3.52,Não,Não
+64,50,Masculino,Norte,Jan,Não,Não exposto,Baixa,Sim,Sim,25.3,8,3.39,Não,Não
+65,31,Feminino,Leste,Mar,Sim,Exposto,Baixa,Sim,Não,32.1,8,2.55,Não,Não
+66,37,Feminino,Norte,Jan,Sim,Exposto,Moderada,Sim,Não,18.7,9,3.7,Não,Não
+67,58,Masculino,Sul,Mar,Não,Não exposto,Moderada,Sim,Sim,30.7,10,3.48,Não,Não
+68,36,Masculino,Sul,Jan,Sim,Exposto,Baixa,Sim,Não,28.3,7,3.71,Não,Não
+69,54,Masculino,Leste,Abr,Não,Não exposto,Moderada,Sim,Não,24.8,5,2.19,Não,Não
+70,48,Feminino,Norte,Abr,Não,Não exposto,Moderada,Sim,Não,23.1,3,3.97,Não,Não
+71,42,Masculino,Centro,Mai,Não,Não exposto,Baixa,Sim,Não,31.2,10,3.15,Não,Não
+72,48,Masculino,Leste,Mai,Não,Não exposto,Moderada,Não,Não,,5,1.32,Não,Não
+73,52,Feminino,Oeste,Abr,Não,Não exposto,Baixa,Não,Sim,24.2,5,4.08,Não,Não
+74,47,Feminino,Centro,Mar,Não,Não exposto,Baixa,Sim,Sim,30.7,8,3.52,Não,Não
+75,49,Feminino,Norte,Mar,Não,Não exposto,Moderada,Não,Sim,30.5,15,5.3,Não,Sim
+76,58,Masculino,Centro,Jun,Não,Não exposto,Baixa,Não,Sim,25.9,4,4.11,Não,Não
+77,43,Masculino,Centro,Fev,Não,Não exposto,Alta,Sim,Sim,20.7,7,3.33,Não,Não
+78,50,Feminino,Centro,Mai,Não,Não exposto,Baixa,Sim,Não,22.4,7,3.18,Não,Não
+79,43,Masculino,Norte,Mai,Não,Não exposto,Moderada,Sim,Não,29.3,10,4.55,Não,Não
+80,53,Feminino,Leste,Jan,Não,Não exposto,Alta,Sim,Não,25.1,10,3.53,Não,Não
+81,44,Feminino,Centro,Abr,Não,Não exposto,Baixa,Não,Não,22.6,9,4.4,Não,Não
+82,59,Masculino,Centro,Jan,Não,Não exposto,Alta,Sim,Sim,21.4,13,5.41,Sim,Não
+83,66,Feminino,Oeste,Mai,Sim,Exposto,Moderada,Sim,Sim,24.4,8,5.01,Não,Não
+84,21,Feminino,Oeste,Fev,Não,Não exposto,Moderada,Não,Sim,27.9,15,7.16,Sim,Não
+85,71,Feminino,Sul,Mai,Não,Não exposto,Baixa,Sim,Não,31.0,7,3.84,Sim,Não
+86,67,Masculino,Leste,Jan,Não,Não exposto,Moderada,Não,Sim,22.8,4,4.76,Não,Não
+87,32,Masculino,Norte,Abr,Não,Não exposto,Alta,Sim,Não,24.1,7,3.38,Não,Não
+88,89,Feminino,Leste,Abr,Não,Não exposto,Moderada,Sim,Sim,31.6,7,2.66,Não,Não
+89,50,Feminino,Norte,Mai,Não,Não exposto,Moderada,Não,Não,23.3,15,4.56,Não,Não
+90,56,Feminino,Leste,Fev,Não,Não exposto,Baixa,Sim,Não,24.6,10,4.84,Não,Não
+91,77,Feminino,Centro,Abr,Não,Não exposto,Moderada,Sim,Não,32.1,4,1.92,Não,Não
+92,35,Feminino,Leste,Fev,Não,Não exposto,Moderada,Sim,Não,21.4,4,2.33,Não,Não
+93,26,Feminino,Oeste,Fev,Não,Não exposto,Moderada,Não,Não,22.2,9,2.43,Não,Não
+94,40,Feminino,Norte,Mai,Não,Não exposto,Moderada,Sim,Não,24.3,4,3.35,Não,Não
+95,49,Masculino,Oeste,Abr,Não,Não exposto,Moderada,Sim,Não,24.3,11,3.72,Não,Não
+96,53,Feminino,Centro,Mai,Não,Não exposto,Moderada,Sim,Sim,29.8,6,3.46,Não,Não
+97,59,Masculino,Sul,Fev,Não,Não exposto,Moderada,Não,Não,26.0,6,4.84,Não,Não
+98,77,Masculino,Sul,Fev,Sim,Exposto,Baixa,Não,Sim,30.4,13,3.49,Não,Não
+99,32,Feminino,Oeste,Jan,Sim,Exposto,Baixa,Não,Sim,18.9,7,2.81,Não,Não
+100,24,Masculino,Oeste,Mar,Sim,Exposto,Moderada,Não,Não,31.9,10,2.8,Não,Não
+101,52,Feminino,Leste,Abr,Não,Não exposto,Moderada,Sim,Sim,21.0,17,6.16,Sim,Não
+102,46,Masculino,Leste,Mar,Não,Não exposto,Alta,Sim,Sim,22.5,11,3.91,Sim,Não
+103,45,Feminino,Leste,Abr,Não,Não exposto,Baixa,Sim,Não,29.0,3,3.91,Não,Não
+104,21,Feminino,Centro,Mar,Sim,Exposto,Baixa,Não,Não,27.2,11,4.15,Não,Não
+105,58,Feminino,Oeste,Abr,Não,Não exposto,Moderada,Não,Sim,19.3,6,3.1,Não,Não
+106,58,Masculino,Centro,Abr,Sim,Exposto,Moderada,Não,Não,24.9,7,2.18,Não,Não
+107,41,Masculino,Norte,Mai,Não,Não exposto,Moderada,Não,Sim,23.2,9,2.74,Não,Não
+108,90,Feminino,Norte,Jan,Não,Não exposto,Baixa,Sim,Sim,31.2,3,2.72,Não,Não
+109,25,Feminino,Norte,Mai,Não,Não exposto,Moderada,Sim,Não,30.1,9,4.27,Não,Não
+110,64,Masculino,Norte,Jan,Sim,Exposto,Baixa,Não,Sim,32.3,7,4.16,Não,Não
+111,36,Masculino,Centro,Mar,Sim,Exposto,Alta,Sim,Não,24.8,11,4.98,Não,Não
+112,31,Masculino,Leste,Fev,Não,Não exposto,Alta,Sim,Não,32.2,5,4.14,Não,Não
+113,25,Masculino,Sul,Abr,Não,Não exposto,Moderada,Sim,Não,24.9,8,2.27,Não,Não
+114,65,Feminino,Norte,Fev,Não,Não exposto,Baixa,Não,Sim,23.9,17,5.5,Sim,Não
+115,35,Feminino,Centro,Mar,Não,Não exposto,Moderada,Não,Não,32.5,5,4.35,Não,Não
+116,37,Feminino,Centro,Mai,Não,Não exposto,Baixa,Não,Não,33.9,8,2.89,Não,Não
+117,39,Masculino,Oeste,Jan,Não,Não exposto,Moderada,Sim,Não,30.2,6,2.37,Não,Não
+118,54,Masculino,Sul,Jun,Não,Não exposto,Baixa,Sim,Sim,24.1,5,4.24,Não,Não
+119,67,Feminino,Centro,Jan,Não,Não exposto,Moderada,Sim,Sim,31.4,7,5.96,Sim,Não
+120,52,Feminino,Leste,Jan,Sim,Exposto,Baixa,Sim,Não,27.3,2,2.75,Não,Não
+121,69,Feminino,Centro,Abr,Não,Não exposto,Moderada,Sim,Sim,28.9,15,4.69,Não,Sim
+122,71,Feminino,Centro,Fev,Não,Não exposto,Alta,Sim,Sim,21.3,9,2.08,Não,Não
+123,39,Masculino,Centro,Abr,Não,Não exposto,Alta,Sim,Não,26.5,6,5.32,Não,Não
+124,53,Masculino,Centro,Jun,Não,Não exposto,Moderada,Não,Não,25.2,11,2.45,Não,Não
+125,63,Feminino,Leste,Jan,Não,Não exposto,Baixa,Sim,Sim,27.0,6,1.86,Não,Não
+126,60,Feminino,Sul,Mar,Sim,Exposto,Moderada,Sim,Sim,32.2,7,4.14,Não,Não
+127,49,Masculino,Sul,Abr,Sim,Exposto,Baixa,Não,Sim,21.9,19,4.49,Sim,Sim
+128,76,Masculino,Oeste,Mai,Não,Não exposto,Baixa,Sim,Sim,20.5,8,2.17,Não,Não
+129,43,Masculino,Centro,Mai,Não,Não exposto,Moderada,Sim,Não,28.3,5,1.22,Não,Não
+130,44,Masculino,Sul,Abr,Não,Não exposto,Moderada,Sim,Não,29.2,5,5.93,Não,Não
+131,54,Masculino,Oeste,Mai,Não,Não exposto,Moderada,Não,Não,26.7,23,5.79,Sim,Sim
+132,45,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Sim,Não,26.0,8,2.8,Não,Não
+133,30,Feminino,Sul,Abr,Não,Não exposto,Moderada,Sim,Não,,5,3.79,Não,Não
+134,67,Masculino,Leste,Mar,Não,Não exposto,Moderada,Não,Não,35.6,9,3.88,Não,Não
+135,48,Feminino,Leste,Jan,Não,Não exposto,Baixa,Sim,Sim,31.5,8,2.61,Não,Não
+136,65,Feminino,Sul,Jun,Não,Não exposto,Baixa,Sim,Sim,27.6,7,2.56,Não,Não
+137,69,Feminino,Centro,Abr,Sim,Exposto,Alta,Não,Não,22.9,13,2.56,Não,Não
+138,26,Feminino,Norte,Abr,Não,Não exposto,Moderada,Não,Não,28.7,4,4.18,Não,Não
+139,58,Masculino,Oeste,Fev,Não,Não exposto,Moderada,Sim,Sim,24.2,2,3.75,Não,Não
+140,40,Feminino,Centro,Fev,Não,Não exposto,Moderada,Não,Sim,25.6,3,2.32,Não,Não
+141,53,Masculino,Norte,Mai,Não,Não exposto,Moderada,Sim,Sim,25.5,14,5.99,Não,Sim
+142,59,Feminino,Norte,Mai,Não,Não exposto,Moderada,Sim,Não,31.3,6,5.29,Não,Não
+143,35,Masculino,Oeste,Jun,Não,Não exposto,Moderada,Sim,Sim,26.4,17,4.12,Sim,Não
+144,31,Masculino,Sul,Mai,Sim,Exposto,Moderada,Não,Não,20.1,6,4.25,Não,Não
+145,48,Masculino,Oeste,Mai,Não,Não exposto,Moderada,Sim,Não,32.6,16,6.83,Sim,Não
+146,43,Feminino,Oeste,Fev,Não,Não exposto,Alta,Sim,Não,20.9,10,4.93,Não,Não
+147,39,Masculino,Norte,Jan,Sim,Exposto,Moderada,Sim,Sim,27.5,9,5.99,Não,Não
+148,54,Feminino,Leste,Mai,Não,Não exposto,Baixa,Sim,Sim,32.8,4,4.33,Não,Não
+149,46,Masculino,Norte,Abr,Não,Não exposto,Baixa,Sim,Não,27.1,9,4.21,Não,Não
+150,57,Masculino,Oeste,Jun,Não,Não exposto,Alta,Sim,Sim,25.5,5,4.7,Não,Não
+151,60,Feminino,Centro,Mar,Não,Não exposto,Moderada,Não,Não,33.5,6,3.54,Não,Não
+152,36,Masculino,Leste,Jun,Não,Não exposto,Moderada,Sim,Não,20.0,9,4.49,Não,Não
+153,39,Masculino,Centro,Fev,Não,Não exposto,Baixa,Sim,Não,28.7,7,4.36,Não,Não
+154,54,Feminino,Leste,Mai,Não,Não exposto,Moderada,Não,Não,33.3,7,3.96,Não,Não
+155,53,Masculino,Oeste,Mai,Sim,Exposto,Alta,Sim,Sim,26.5,5,2.61,Não,Não
+156,51,Masculino,Centro,Abr,Sim,Exposto,Baixa,Sim,Sim,28.7,12,1.69,Não,Não
+157,74,Feminino,Centro,Fev,Sim,Exposto,Moderada,Não,Sim,24.4,7,3.1,Não,Não
+158,75,Masculino,Leste,Mar,Não,Não exposto,Alta,Não,Sim,22.0,17,5.64,Não,Sim
+159,19,Masculino,Norte,Jun,Não,Não exposto,Moderada,Sim,Não,24.5,6,2.78,Não,Não
+160,49,Feminino,Sul,Fev,Não,Não exposto,Baixa,Não,Sim,30.6,8,3.59,Não,Não
+161,44,Masculino,Norte,Mar,Não,Não exposto,Alta,Não,Não,25.9,3,4.92,Não,Não
+162,31,Masculino,Leste,Mai,Não,Não exposto,Alta,Sim,Não,24.5,9,3.1,Não,Não
+163,19,Feminino,Norte,Mar,Não,Não exposto,Moderada,Sim,Não,26.5,10,3.75,Não,Não
+164,18,Feminino,Norte,Fev,Não,Não exposto,Alta,Sim,Não,25.9,12,1.83,Não,Não
+165,43,Masculino,Centro,Abr,Sim,Exposto,Baixa,Não,Não,26.6,8,5.11,Não,Não
+166,39,Feminino,Oeste,Jun,Não,Não exposto,Alta,Não,Sim,28.2,6,2.78,Não,Não
+167,51,Masculino,Oeste,Mai,Não,Não exposto,Baixa,Sim,Não,30.8,5,2.73,Não,Não
+168,42,Feminino,Norte,Abr,Não,Não exposto,Baixa,Sim,Sim,25.1,6,3.64,Não,Não
+169,61,Masculino,Leste,Mar,Não,Não exposto,Baixa,Sim,Não,28.8,5,4.06,Não,Não
+170,67,Feminino,Norte,Abr,Não,Não exposto,Moderada,Sim,Não,23.9,9,4.4,Não,Não
+171,34,Feminino,Leste,Fev,Sim,Exposto,Moderada,Não,Não,26.1,6,6.43,Não,Não
+172,37,Masculino,Leste,Abr,Sim,Exposto,Baixa,Sim,Não,,7,4.01,Não,Não
+173,70,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Sim,Sim,22.9,6,4.28,Não,Não
+174,32,Masculino,Norte,Fev,Não,Não exposto,Moderada,Sim,Não,25.3,6,3.01,Não,Não
+175,77,Feminino,Sul,Abr,Não,Não exposto,Baixa,Não,Não,23.6,5,7.24,Não,Não
+176,84,Feminino,Centro,Jun,Não,Não exposto,Moderada,Não,Sim,24.0,6,3.77,Não,Não
+177,41,Masculino,Centro,Mar,Sim,Exposto,Moderada,Sim,Não,29.0,9,4.8,Não,Não
+178,49,Masculino,Leste,Jun,Sim,Exposto,Baixa,Sim,Não,27.4,2,3.5,Não,Não
+179,54,Feminino,Leste,Abr,Sim,Exposto,Baixa,Não,Não,32.0,6,2.0,Não,Não
+180,25,Feminino,Leste,Mar,Sim,Exposto,Moderada,Sim,Não,24.1,10,2.45,Não,Não
+181,83,Feminino,Leste,Mai,Não,Não exposto,Moderada,Sim,Não,24.3,4,3.77,Não,Não
+182,18,Masculino,Oeste,Mai,Sim,Exposto,Baixa,Não,Não,31.4,14,2.67,Não,Não
+183,46,Masculino,Leste,Abr,Sim,Exposto,Moderada,Não,Não,25.7,4,5.09,Não,Não
+184,40,Masculino,Sul,Abr,Não,Não exposto,Moderada,Sim,Não,24.7,6,4.11,Não,Não
+185,83,Masculino,Centro,Mar,Não,Não exposto,Moderada,Sim,Não,23.8,11,5.22,Não,Não
+186,48,Masculino,Leste,Mar,Sim,Exposto,Alta,Sim,Sim,22.8,7,4.32,Não,Não
+187,21,Feminino,Sul,Fev,Sim,Exposto,Moderada,Não,Não,24.2,10,6.23,Não,Não
+188,56,Masculino,Norte,Jun,Sim,Exposto,Baixa,Sim,Não,32.6,5,4.2,Não,Não
+189,52,Feminino,Sul,Abr,Não,Não exposto,Alta,Sim,Não,28.6,10,2.22,Não,Não
+190,70,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Não,Sim,25.8,29,2.55,Não,Não
+191,18,Feminino,Norte,Mar,Sim,Exposto,Moderada,Não,Não,30.1,36,4.43,Não,Não
+192,64,Masculino,Norte,Fev,Não,Não exposto,Moderada,Não,Não,,6,1.74,Não,Não
+193,66,Feminino,Centro,Abr,Não,Não exposto,Baixa,Sim,Sim,36.5,12,5.17,Sim,Não
+194,35,Feminino,Leste,Abr,Não,Não exposto,Alta,Sim,Não,27.4,8,4.22,Não,Não
+195,30,Feminino,Centro,Mai,Não,Não exposto,Moderada,Não,Não,24.5,3,2.79,Não,Não
+196,35,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Sim,Sim,28.8,9,6.14,Não,Não
+197,66,Masculino,Centro,Mar,Não,Não exposto,Moderada,Sim,Não,25.3,8,2.49,Não,Não
+198,61,Masculino,Leste,Jan,Sim,Exposto,Baixa,Sim,Não,25.7,7,5.56,Não,Não
+199,38,Feminino,Sul,Abr,Não,Não exposto,Moderada,Não,Não,24.6,8,2.74,Não,Não
+200,62,Feminino,Sul,Jun,Não,Não exposto,Alta,Sim,Não,27.5,3,5.37,Não,Não
+201,70,Feminino,Sul,Mai,Sim,Exposto,Moderada,Sim,Não,26.2,8,3.17,Não,Não
+202,41,Masculino,Sul,Abr,Não,Não exposto,Moderada,Sim,Não,28.4,7,5.72,Não,Não
+203,68,Masculino,Leste,Abr,Sim,Exposto,Baixa,Não,Sim,30.6,6,1.43,Não,Não
+204,39,Masculino,Centro,Abr,Sim,Exposto,Moderada,Sim,Não,26.0,7,3.75,Não,Não
+205,40,Feminino,Sul,Abr,Não,Não exposto,Moderada,Não,Não,28.4,6,2.86,Não,Não
+206,44,Masculino,Leste,Mai,Não,Não exposto,Moderada,Não,Sim,31.0,7,1.62,Não,Não
+207,52,Feminino,Sul,Mar,Não,Não exposto,Baixa,Sim,Sim,33.4,10,5.46,Não,Não
+208,18,Masculino,Oeste,Fev,Sim,Exposto,Baixa,Sim,Sim,25.2,7,2.57,Não,Não
+209,27,Feminino,Sul,Fev,Não,Não exposto,Moderada,Sim,Não,25.9,10,2.45,Não,Não
+210,18,Masculino,Norte,Jun,Não,Não exposto,Alta,Não,Não,23.1,8,2.96,Não,Não
+211,57,Feminino,Oeste,Fev,Não,Não exposto,Moderada,Não,Não,,8,2.83,Não,Não
+212,69,Feminino,Norte,Fev,Não,Não exposto,Baixa,Sim,Sim,38.2,6,4.3,Não,Não
+213,72,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Sim,Não,24.6,10,3.14,Não,Não
+214,18,Masculino,Centro,Jun,Sim,Exposto,Moderada,Sim,Não,27.2,11,1.61,Não,Não
+215,47,Feminino,Leste,Fev,Não,Não exposto,Moderada,Sim,Não,30.8,14,4.9,Sim,Não
+216,25,Masculino,Leste,Abr,Sim,Exposto,Moderada,Não,Não,32.2,8,4.41,Não,Não
+217,22,Feminino,Sul,Mar,Sim,Exposto,Moderada,Sim,Não,28.1,14,4.49,Não,Não
+218,36,Masculino,Leste,Abr,Não,Não exposto,Alta,Sim,Não,21.3,5,1.26,Não,Não
+219,23,Masculino,Oeste,Mar,Sim,Exposto,Moderada,Não,Sim,24.6,6,3.95,Não,Não
+220,83,Feminino,Sul,Abr,Não,Não exposto,Baixa,Sim,Sim,29.3,7,2.06,Não,Não
+221,19,Feminino,Norte,Jan,Não,Não exposto,Moderada,Sim,Não,25.9,10,3.07,Não,Não
+222,28,Feminino,Leste,Mar,Sim,Exposto,Moderada,Sim,Não,35.8,7,2.23,Não,Não
+223,43,Masculino,Centro,Mai,Sim,Exposto,Moderada,Não,Sim,27.7,5,4.63,Não,Não
+224,47,Feminino,Oeste,Mar,Não,Não exposto,Alta,Sim,Sim,29.7,9,4.06,Não,Não
+225,46,Masculino,Norte,Jun,Não,Não exposto,Alta,Não,Não,18.3,7,5.15,Não,Não
+226,24,Masculino,Sul,Fev,Não,Não exposto,Moderada,Sim,Não,30.4,7,4.18,Não,Não
+227,50,Feminino,Oeste,Mai,Não,Não exposto,Baixa,Sim,Não,30.2,7,1.95,Não,Não
+228,51,Feminino,Centro,Mar,Não,Não exposto,Baixa,Sim,Não,22.0,6,3.18,Não,Não
+229,59,Feminino,Sul,Mai,Não,Não exposto,Moderada,Sim,Sim,24.4,4,1.13,Não,Não
+230,43,Masculino,Oeste,Abr,Sim,Exposto,Alta,Sim,Sim,26.3,15,4.11,Sim,Não
+231,63,Feminino,Leste,Jan,Não,Não exposto,Baixa,Sim,Não,30.2,4,3.86,Não,Não
+232,20,Feminino,Centro,Jan,Não,Não exposto,Baixa,Sim,Não,33.4,5,2.47,Não,Não
+233,69,Masculino,Oeste,Jun,Não,Não exposto,Baixa,Não,Sim,,11,2.68,Não,Não
+234,61,Feminino,Norte,Abr,Sim,Exposto,Moderada,Sim,Sim,26.2,8,2.07,Não,Não
+235,52,Feminino,Oeste,Mai,Sim,Exposto,Alta,Não,Sim,17.3,6,3.23,Não,Não
+236,54,Feminino,Norte,Abr,Sim,Exposto,Alta,Sim,Sim,25.2,5,3.86,Não,Não
+237,63,Masculino,Centro,Abr,Sim,Exposto,Moderada,Não,Não,24.2,4,2.94,Não,Não
+238,61,Masculino,Norte,Jan,Não,Não exposto,Moderada,Sim,Sim,30.1,19,5.86,Não,Sim
+239,27,Masculino,Norte,Jun,Sim,Exposto,Moderada,Não,Não,24.5,10,0.53,Não,Não
+240,66,Masculino,Norte,Mai,Não,Não exposto,Moderada,Sim,Não,24.7,6,2.51,Não,Não
+241,50,Masculino,Leste,Mar,Não,Não exposto,Moderada,Não,Não,31.2,3,4.5,Não,Não
+242,67,Masculino,Leste,Jun,Não,Não exposto,Moderada,Não,Sim,33.7,11,5.38,Não,Não
+243,53,Feminino,Norte,Mai,Sim,Exposto,Baixa,Sim,Não,22.5,8,4.63,Não,Não
+244,28,Feminino,Oeste,Mar,Não,Não exposto,Alta,Não,Não,20.9,7,1.76,Não,Não
+245,26,Masculino,Leste,Mar,Sim,Exposto,Moderada,Sim,Não,26.0,7,3.64,Não,Não
+246,54,Feminino,Sul,Mai,Sim,Exposto,Baixa,Não,Não,30.3,9,4.26,Não,Não
+247,66,Feminino,Norte,Mai,Não,Não exposto,Baixa,Sim,Não,33.2,7,3.79,Não,Não
+248,19,Masculino,Leste,Mai,Não,Não exposto,Alta,Não,Não,27.3,6,2.16,Não,Não
+249,40,Feminino,Leste,Mar,Não,Não exposto,Alta,Sim,Não,32.2,5,3.26,Não,Não
+250,65,Feminino,Sul,Jan,Sim,Exposto,Moderada,Sim,Não,27.6,7,4.68,Não,Não
+251,39,Feminino,Oeste,Jun,Sim,Exposto,Alta,Não,Não,31.1,5,2.21,Não,Não
+252,78,Feminino,Leste,Mai,Não,Não exposto,Moderada,Não,Não,35.6,11,3.63,Sim,Não
+253,58,Masculino,Centro,Abr,Não,Não exposto,Moderada,Não,Sim,29.4,16,5.42,Sim,Não
+254,68,Masculino,Leste,Fev,Sim,Exposto,Baixa,Não,Não,29.0,6,4.92,Não,Não
+255,34,Feminino,Leste,Fev,Não,Não exposto,Moderada,Sim,Não,22.8,6,3.25,Não,Não
+256,79,Masculino,Leste,Jun,Sim,Exposto,Moderada,Sim,Sim,,11,4.41,Não,Não
+257,60,Feminino,Sul,Mai,Não,Não exposto,Moderada,Sim,Não,26.4,7,3.64,Não,Não
+258,53,Masculino,Sul,Abr,Não,Não exposto,Moderada,Não,Sim,31.7,8,2.58,Não,Não
+259,60,Masculino,Sul,Abr,Não,Não exposto,Alta,Sim,Não,27.0,5,2.43,Não,Não
+260,52,Feminino,Oeste,Abr,Sim,Exposto,Baixa,Não,Sim,27.7,9,1.73,Não,Não
+261,72,Feminino,Leste,Mar,Sim,Exposto,Moderada,Não,Sim,30.7,4,3.91,Não,Não
+262,45,Feminino,Sul,Jan,Sim,Exposto,Baixa,Sim,Não,23.6,5,4.03,Não,Não
+263,42,Feminino,Sul,Jan,Não,Não exposto,Moderada,Sim,Não,36.9,8,1.26,Não,Não
+264,44,Feminino,Norte,Mai,Sim,Exposto,Baixa,Sim,Não,27.7,5,3.7,Não,Não
+265,51,Feminino,Sul,Mai,Sim,Exposto,Baixa,Não,Não,33.6,4,4.46,Não,Não
+266,48,Masculino,Sul,Abr,Não,Não exposto,Baixa,Sim,Não,20.6,8,2.69,Não,Não
+267,18,Masculino,Centro,Jan,Não,Não exposto,Moderada,Sim,Não,28.8,11,3.46,Não,Não
+268,67,Masculino,Sul,Mar,Não,Não exposto,Moderada,Sim,Sim,24.2,6,3.58,Não,Não
+269,30,Feminino,Centro,Mai,Não,Não exposto,Moderada,Sim,Não,22.6,7,5.65,Não,Não
+270,38,Masculino,Leste,Jun,Sim,Exposto,Moderada,Sim,Não,26.8,7,4.62,Não,Não
+271,41,Masculino,Sul,Abr,Não,Não exposto,Moderada,Sim,Não,31.6,9,6.59,Não,Não
+272,61,Masculino,Centro,Mar,Não,Não exposto,Baixa,Sim,Sim,26.0,10,4.87,Sim,Não
+273,18,Feminino,Oeste,Abr,Não,Não exposto,Moderada,Sim,Sim,32.6,9,4.12,Não,Não
+274,22,Feminino,Norte,Fev,Não,Não exposto,Moderada,Não,Não,32.3,9,3.88,Não,Não
+275,90,Feminino,Sul,Fev,Sim,Exposto,Baixa,Não,Sim,28.4,18,8.78,Sim,Sim
+276,71,Masculino,Norte,Abr,Sim,Exposto,Moderada,Sim,Não,24.5,10,5.05,Não,Não
+277,78,Masculino,Norte,Abr,Não,Não exposto,Moderada,Não,Sim,23.5,6,3.97,Não,Não
+278,42,Masculino,Sul,Mai,Não,Não exposto,Baixa,Não,Não,21.3,5,4.39,Não,Não
+279,69,Masculino,Sul,Jun,Sim,Exposto,Baixa,Não,Sim,,12,5.86,Sim,Não
+280,43,Masculino,Leste,Jun,Sim,Exposto,Baixa,Sim,Sim,30.8,11,5.64,Sim,Não
+281,39,Masculino,Oeste,Abr,Sim,Exposto,Baixa,Sim,Sim,23.2,12,3.42,Sim,Não
+282,18,Feminino,Leste,Jun,Não,Não exposto,Moderada,Sim,Não,,4,3.94,Não,Não
+283,45,Masculino,Oeste,Jan,Não,Não exposto,Baixa,Sim,Não,29.1,4,4.49,Não,Não
+284,42,Masculino,Norte,Mar,Sim,Exposto,Moderada,Não,Não,31.3,4,2.85,Não,Não
+285,18,Feminino,Oeste,Mar,Não,Não exposto,Baixa,Sim,Não,31.5,10,3.93,Não,Não
+286,29,Masculino,Norte,Jan,Não,Não exposto,Moderada,Sim,Não,28.3,4,2.78,Não,Não
+287,41,Feminino,Sul,Mar,Sim,Exposto,Moderada,Não,Não,28.6,9,3.16,Não,Não
+288,26,Masculino,Sul,Abr,Sim,Exposto,Moderada,Sim,Não,17.8,13,5.52,Sim,Não
+289,60,Feminino,Leste,Abr,Sim,Exposto,Moderada,Sim,Não,24.4,6,4.57,Não,Não
+290,41,Masculino,Leste,Mai,Não,Não exposto,Moderada,Não,Não,25.7,8,5.65,Sim,Não
+291,52,Masculino,Oeste,Jun,Não,Não exposto,Moderada,Sim,Não,26.1,6,3.88,Não,Não
+292,68,Feminino,Sul,Jan,Não,Não exposto,Moderada,Não,Não,20.1,10,5.25,Não,Não
+293,53,Masculino,Leste,Abr,Não,Não exposto,Baixa,Sim,Não,27.2,12,2.48,Não,Não
+294,22,Feminino,Sul,Abr,Sim,Exposto,Moderada,Sim,Sim,28.6,9,2.24,Não,Não
+295,59,Feminino,Sul,Abr,Sim,Exposto,Alta,Sim,Sim,17.0,7,5.62,Não,Não
+296,36,Masculino,Leste,Mai,Não,Não exposto,Baixa,Não,Não,26.0,6,3.32,Não,Não
+297,18,Masculino,Sul,Abr,Não,Não exposto,Alta,Sim,Não,28.5,5,2.89,Não,Não
+298,43,Feminino,Oeste,Mar,Sim,Exposto,Moderada,Sim,Não,26.5,7,4.17,Não,Não
+299,55,Feminino,Centro,Jan,Não,Não exposto,Moderada,Não,Sim,29.3,4,5.4,Não,Não
+300,54,Feminino,Centro,Fev,Sim,Exposto,Moderada,Sim,Não,24.3,6,3.47,Não,Não
+301,18,Masculino,Sul,Mai,Sim,Exposto,Moderada,Não,Não,24.6,4,2.38,Não,Não
+302,47,Masculino,Norte,Mar,Não,Não exposto,Moderada,Sim,Não,19.1,10,2.24,Não,Não
+303,65,Masculino,Sul,Fev,Sim,Exposto,Baixa,Não,Sim,33.5,14,5.8,Sim,Não
+304,34,Masculino,Norte,Mai,Não,Não exposto,Baixa,Sim,Sim,30.6,7,3.35,Não,Não
+305,47,Masculino,Norte,Jan,Não,Não exposto,Moderada,Sim,Não,27.5,7,4.57,Não,Não
+306,48,Masculino,Centro,Jun,Sim,Exposto,Alta,Sim,Não,19.2,35,5.35,Não,Não
+307,50,Feminino,Sul,Fev,Sim,Exposto,Alta,Sim,Sim,31.0,8,4.02,Não,Não
+308,67,Feminino,Centro,Fev,Não,Não exposto,Moderada,Não,Não,29.9,9,1.24,Não,Não
+309,49,Feminino,Oeste,Jun,Não,Não exposto,Baixa,Sim,Não,31.4,7,4.86,Não,Não
+310,23,Masculino,Sul,Abr,Não,Não exposto,Baixa,Sim,Não,35.6,6,4.25,Não,Não
+311,28,Feminino,Leste,Fev,Não,Não exposto,Alta,Sim,Sim,32.7,8,1.47,Não,Não
+312,51,Feminino,Oeste,Abr,Não,Não exposto,Alta,Sim,Sim,21.4,8,1.09,Não,Não
+313,18,Masculino,Leste,Mar,Não,Não exposto,Moderada,Sim,Não,24.4,7,3.35,Não,Não
+314,47,Feminino,Leste,Jun,Sim,Exposto,Moderada,Não,Não,23.3,6,4.65,Não,Não
+315,48,Masculino,Leste,Mai,Não,Não exposto,Baixa,Não,Não,20.5,12,6.11,Sim,Não
+316,56,Feminino,Norte,Mai,Não,Não exposto,Baixa,Sim,Sim,26.4,7,1.62,Não,Não
+317,39,Masculino,Oeste,Mar,Não,Não exposto,Baixa,Não,Não,22.8,10,3.23,Não,Não
+318,48,Feminino,Sul,Jan,Não,Não exposto,Alta,Sim,Não,29.7,7,4.95,Não,Não
+319,33,Masculino,Oeste,Jan,Não,Não exposto,Alta,Sim,Não,28.1,6,3.18,Não,Não
+320,33,Masculino,Norte,Mar,Não,Não exposto,Baixa,Sim,Sim,28.3,16,3.57,Sim,Não
+321,64,Feminino,Oeste,Mar,Sim,Exposto,Moderada,Sim,Sim,19.6,3,3.82,Não,Não
+322,36,Feminino,Leste,Fev,Sim,Exposto,Alta,Não,Não,23.7,7,0.66,Não,Não
+323,53,Feminino,Norte,Abr,Não,Não exposto,Baixa,Sim,Sim,33.2,6,0.2,Não,Não
+324,67,Masculino,Sul,Abr,Sim,Exposto,Moderada,Sim,Não,22.9,6,3.67,Não,Não
+325,76,Feminino,Oeste,Fev,Não,Não exposto,Alta,Sim,Não,20.5,5,2.58,Não,Não
+326,73,Masculino,Centro,Jan,Não,Não exposto,Moderada,Sim,Sim,26.5,9,5.81,Não,Não
+327,35,Masculino,Oeste,Jan,Não,Não exposto,Baixa,Sim,Sim,26.5,7,3.98,Não,Não
+328,19,Feminino,Sul,Mar,Não,Não exposto,Alta,Não,Não,29.2,9,5.06,Não,Não
+329,41,Masculino,Leste,Mar,Não,Não exposto,Alta,Sim,Sim,24.6,9,4.29,Não,Não
+330,38,Masculino,Leste,Mar,Sim,Exposto,Moderada,Sim,Sim,22.7,10,3.81,Não,Não
+331,45,Feminino,Leste,Jan,Não,Não exposto,Moderada,Sim,Sim,27.8,9,4.48,Não,Não
+332,42,Masculino,Norte,Jun,Não,Não exposto,Moderada,Sim,Sim,24.1,8,4.14,Não,Não
+333,44,Masculino,Leste,Jan,Sim,Exposto,Baixa,Sim,Sim,27.6,9,2.2,Não,Não
+334,18,Feminino,Centro,Mar,Não,Não exposto,Moderada,Sim,Não,26.7,4,5.3,Não,Não
+335,52,Feminino,Norte,Mai,Não,Não exposto,Moderada,Sim,Não,,5,2.91,Não,Não
+336,81,Feminino,Norte,Mai,Não,Não exposto,Moderada,Não,Não,29.5,7,4.36,Não,Não
+337,79,Feminino,Norte,Abr,Não,Não exposto,Baixa,Sim,Não,24.8,7,2.39,Não,Não
+338,57,Masculino,Oeste,Mar,Sim,Exposto,Baixa,Não,Sim,30.0,8,3.91,Não,Não
+339,59,Feminino,Leste,Abr,Sim,Exposto,Baixa,Sim,Não,31.9,9,3.69,Não,Não
+340,32,Masculino,Leste,Fev,Sim,Exposto,Moderada,Não,Não,29.5,7,2.36,Não,Não
+341,38,Feminino,Leste,Mar,Sim,Exposto,Moderada,Não,Não,23.3,7,3.3,Não,Não
+342,87,Masculino,Centro,Jan,Não,Não exposto,Alta,Sim,Sim,26.3,15,4.86,Sim,Não
+343,52,Feminino,Sul,Jan,Não,Não exposto,Moderada,Sim,Não,26.8,8,2.91,Não,Não
+344,70,Masculino,Norte,Mai,Não,Não exposto,Alta,Sim,Não,29.5,5,5.1,Não,Não
+345,48,Masculino,Centro,Abr,Não,Não exposto,Alta,Não,Sim,,7,3.03,Não,Não
+346,57,Masculino,Centro,Mai,Não,Não exposto,Moderada,Não,Não,27.8,6,3.0,Não,Não
+347,61,Masculino,Oeste,Mar,Sim,Exposto,Moderada,Não,Sim,29.6,6,3.76,Não,Não
+348,59,Masculino,Leste,Abr,Sim,Exposto,Moderada,Sim,Não,23.1,5,3.2,Não,Não
+349,27,Feminino,Sul,Jun,Não,Não exposto,Baixa,Sim,Sim,29.3,9,3.06,Não,Não
+350,42,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Sim,Não,21.8,4,2.3,Não,Não
+351,86,Feminino,Sul,Jan,Não,Não exposto,Moderada,Sim,Sim,25.1,7,5.24,Não,Não
+352,46,Masculino,Norte,Jun,Não,Não exposto,Baixa,Sim,Não,22.7,6,3.01,Não,Não
+353,69,Masculino,Norte,Jun,Sim,Exposto,Moderada,Sim,Não,20.8,13,5.66,Sim,Não
+354,45,Masculino,Centro,Abr,Não,Não exposto,Alta,Sim,Sim,28.7,10,4.89,Não,Não
+355,25,Feminino,Norte,Jun,Não,Não exposto,Moderada,Sim,Sim,29.6,4,3.98,Não,Não
+356,32,Masculino,Centro,Abr,Não,Não exposto,Moderada,Sim,Sim,24.7,8,3.65,Não,Não
+357,19,Feminino,Leste,Jan,Não,Não exposto,Moderada,Sim,Não,26.4,7,3.62,Não,Não
+358,18,Masculino,Oeste,Abr,Sim,Exposto,Alta,Não,Não,26.5,8,1.46,Não,Não
+359,41,Feminino,Norte,Abr,Não,Não exposto,Moderada,Sim,Não,30.3,6,1.64,Não,Não
+360,33,Masculino,Centro,Mai,Não,Não exposto,Moderada,Não,Não,29.5,4,1.69,Não,Não
+361,21,Feminino,Sul,Fev,Não,Não exposto,Baixa,Sim,Não,30.2,4,4.09,Não,Não
+362,32,Masculino,Oeste,Mar,Não,Não exposto,Alta,Sim,Não,17.3,7,6.1,Não,Não
+363,36,Masculino,Leste,Mar,Sim,Exposto,Moderada,Não,Não,25.1,10,3.51,Não,Não
+364,55,Masculino,Sul,Mai,Sim,Exposto,Alta,Não,Não,30.0,7,3.12,Não,Não
+365,56,Masculino,Oeste,Fev,Sim,Exposto,Baixa,Não,Sim,31.8,7,2.94,Não,Não
+366,49,Masculino,Leste,Fev,Não,Não exposto,Moderada,Não,Não,28.6,7,3.57,Não,Não
+367,65,Masculino,Oeste,Mar,Sim,Exposto,Baixa,Sim,Sim,30.7,8,3.18,Não,Não
+368,48,Masculino,Oeste,Jun,Sim,Exposto,Moderada,Sim,Não,20.8,18,6.39,Não,Sim
+369,51,Masculino,Sul,Jun,Sim,Exposto,Moderada,Sim,Não,24.1,4,2.35,Não,Não
+370,28,Masculino,Norte,Abr,Não,Não exposto,Baixa,Sim,Não,30.2,10,1.84,Não,Não
+371,34,Feminino,Norte,Jun,Sim,Exposto,Moderada,Não,Não,32.4,6,3.97,Não,Não
+372,45,Feminino,Leste,Abr,Não,Não exposto,Moderada,Sim,Não,29.8,8,5.94,Não,Não
+373,39,Masculino,Oeste,Jun,Não,Não exposto,Moderada,Não,Não,30.5,12,4.62,Sim,Não
+374,78,Masculino,Centro,Abr,Não,Não exposto,Moderada,Sim,Não,28.8,10,2.37,Não,Não
+375,57,Feminino,Norte,Mar,Não,Não exposto,Moderada,Sim,Sim,24.4,3,3.98,Não,Não
+376,59,Feminino,Sul,Jan,Não,Não exposto,Alta,Sim,Sim,21.5,5,3.46,Não,Não
+377,44,Feminino,Norte,Mai,Sim,Exposto,Baixa,Não,Sim,24.3,6,2.14,Não,Não
+378,54,Masculino,Centro,Jun,Não,Não exposto,Moderada,Sim,Não,18.9,7,3.2,Não,Não
+379,74,Masculino,Oeste,Jan,Não,Não exposto,Moderada,Sim,Não,22.5,7,5.51,Não,Não
+380,34,Feminino,Sul,Jan,Sim,Exposto,Baixa,Não,Não,24.4,8,3.26,Não,Não
+381,69,Masculino,Oeste,Mai,Não,Não exposto,Moderada,Não,Não,27.5,4,3.47,Não,Não
+382,20,Masculino,Sul,Abr,Não,Não exposto,Moderada,Não,Não,19.9,36,3.16,Não,Não
+383,57,Feminino,Oeste,Jun,Não,Não exposto,Moderada,Sim,Não,21.9,3,3.46,Não,Não
+384,65,Masculino,Norte,Abr,Não,Não exposto,Baixa,Sim,Sim,28.4,11,4.1,Não,Não
+385,64,Masculino,Leste,Mar,Não,Não exposto,Moderada,Não,Sim,29.8,9,6.69,Não,Não
+386,63,Feminino,Norte,Mai,Não,Não exposto,Baixa,Sim,Não,27.1,8,5.17,Não,Não
+387,20,Masculino,Sul,Jun,Não,Não exposto,Baixa,Sim,Sim,29.3,11,5.12,Não,Não
+388,40,Masculino,Leste,Abr,Sim,Exposto,Moderada,Sim,Sim,27.9,4,3.9,Não,Não
+389,76,Feminino,Centro,Jan,Não,Não exposto,Moderada,Sim,Sim,22.1,7,2.83,Não,Não
+390,66,Feminino,Norte,Mai,Não,Não exposto,Baixa,Sim,Sim,34.5,6,2.89,Não,Não
+391,35,Masculino,Norte,Mar,Sim,Exposto,Moderada,Sim,Sim,17.0,6,5.13,Não,Não
+392,33,Masculino,Leste,Fev,Não,Não exposto,Alta,Sim,Não,17.0,3,2.69,Não,Não
+393,55,Feminino,Leste,Abr,Sim,Exposto,Alta,Não,Sim,,16,4.12,Não,Sim
+394,44,Feminino,Leste,Fev,Não,Não exposto,Baixa,Não,Não,22.6,7,4.91,Não,Não
+395,43,Feminino,Sul,Abr,Não,Não exposto,Baixa,Sim,Não,26.2,9,4.44,Não,Não
+396,33,Feminino,Leste,Mar,Não,Não exposto,Baixa,Não,Não,28.9,8,2.85,Não,Não
+397,52,Feminino,Leste,Jun,Não,Não exposto,Moderada,Sim,Não,30.9,6,4.56,Não,Não
+398,62,Feminino,Leste,Mai,Não,Não exposto,Moderada,Não,Não,26.6,9,3.12,Não,Não
+399,46,Masculino,Norte,Jan,Sim,Exposto,Baixa,Não,Não,22.9,5,3.07,Não,Não
+400,59,Feminino,Sul,Abr,Não,Não exposto,Alta,Sim,Sim,25.4,8,5.0,Sim,Não
+401,47,Feminino,Sul,Abr,Não,Não exposto,Moderada,Não,Sim,31.1,6,4.91,Sim,Não
+402,90,Masculino,Leste,Abr,Não,Não exposto,Alta,Não,Sim,27.4,10,3.22,Não,Não
+403,58,Feminino,Sul,Fev,Não,Não exposto,Alta,Sim,Não,34.6,5,4.61,Não,Não
+404,71,Masculino,Sul,Fev,Não,Não exposto,Baixa,Sim,Não,25.3,8,3.57,Não,Não
+405,18,Masculino,Oeste,Fev,Não,Não exposto,Baixa,Sim,Sim,25.5,4,2.12,Não,Não
+406,35,Masculino,Leste,Jan,Não,Não exposto,Moderada,Sim,Não,29.5,7,4.31,Não,Não
+407,43,Feminino,Centro,Fev,Sim,Exposto,Alta,Não,Sim,26.7,6,3.05,Não,Não
+408,32,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Sim,Não,26.2,7,1.58,Não,Não
+409,18,Feminino,Centro,Mai,Sim,Exposto,Moderada,Sim,Sim,21.2,8,2.26,Não,Não
+410,40,Feminino,Oeste,Fev,Sim,Exposto,Baixa,Sim,Não,24.5,7,3.84,Não,Não
+411,75,Feminino,Sul,Abr,Sim,Exposto,Alta,Não,Não,28.1,13,6.13,Sim,Não
+412,54,Masculino,Norte,Jun,Não,Não exposto,Baixa,Sim,Não,28.6,9,3.05,Sim,Não
+413,56,Masculino,Leste,Jun,Sim,Exposto,Baixa,Sim,Não,28.2,7,5.7,Não,Não
+414,65,Feminino,Oeste,Mar,Sim,Exposto,Moderada,Sim,Não,23.4,9,2.71,Não,Não
+415,43,Masculino,Oeste,Mai,Não,Não exposto,Moderada,Não,Não,17.0,7,3.23,Não,Não
+416,67,Feminino,Sul,Abr,Não,Não exposto,Alta,Não,Sim,33.2,10,6.62,Não,Não
+417,48,Feminino,Oeste,Mai,Não,Não exposto,Baixa,Sim,Não,29.5,9,4.1,Não,Não
+418,59,Feminino,Norte,Fev,Não,Não exposto,Baixa,Não,Sim,23.9,8,4.53,Não,Não
+419,28,Feminino,Oeste,Mar,Não,Não exposto,Baixa,Sim,Não,25.6,10,6.01,Não,Não
+420,47,Masculino,Leste,Mar,Não,Não exposto,Baixa,Sim,Não,28.3,3,3.5,Não,Não
+421,54,Feminino,Leste,Fev,Não,Não exposto,Alta,Não,Não,22.6,3,3.74,Não,Não
+422,33,Masculino,Norte,Jun,Não,Não exposto,Alta,Sim,Não,26.8,6,1.63,Não,Não
+423,27,Feminino,Oeste,Jun,Não,Não exposto,Baixa,Sim,Não,23.0,3,1.86,Não,Não
+424,18,Masculino,Leste,Mai,Sim,Exposto,Alta,Sim,Não,24.7,5,4.23,Não,Não
+425,54,Feminino,Sul,Jun,Não,Não exposto,Moderada,Sim,Sim,28.3,12,2.28,Não,Não
+426,50,Masculino,Sul,Jun,Sim,Exposto,Moderada,Sim,Não,27.3,8,4.05,Não,Não
+427,62,Feminino,Centro,Fev,Não,Não exposto,Moderada,Sim,Sim,27.8,8,2.8,Não,Não
+428,56,Feminino,Leste,Mai,Não,Não exposto,Baixa,Sim,Sim,28.7,5,3.16,Não,Não
+429,81,Masculino,Leste,Mai,Sim,Exposto,Baixa,Sim,Sim,27.8,17,4.36,Não,Sim
+430,52,Masculino,Leste,Abr,Sim,Exposto,Alta,Não,Sim,25.4,11,6.79,Não,Sim
+431,62,Feminino,Leste,Abr,Não,Não exposto,Moderada,Não,Sim,22.7,4,5.1,Não,Não
+432,53,Masculino,Leste,Mai,Não,Não exposto,Baixa,Sim,Sim,24.9,5,4.6,Não,Não
+433,49,Feminino,Norte,Mai,Sim,Exposto,Moderada,Sim,Sim,27.5,9,6.16,Não,Não
+434,38,Feminino,Leste,Fev,Não,Não exposto,Moderada,Não,Sim,17.9,13,2.04,Não,Não
+435,58,Feminino,Leste,Abr,Não,Não exposto,Moderada,Não,Não,30.0,9,5.11,Não,Não
+436,48,Masculino,Centro,Fev,Não,Não exposto,Moderada,Sim,Sim,24.6,5,3.91,Não,Não
+437,28,Feminino,Oeste,Mai,Sim,Exposto,Moderada,Sim,Não,26.6,7,2.82,Não,Não
+438,49,Feminino,Sul,Jun,Sim,Exposto,Alta,Sim,Não,20.8,8,3.3,Não,Não
+439,27,Feminino,Sul,Abr,Não,Não exposto,Baixa,Sim,Sim,22.0,4,3.13,Não,Não
+440,50,Masculino,Centro,Jun,Sim,Exposto,Baixa,Sim,Não,25.5,6,2.97,Não,Não
+441,66,Feminino,Sul,Mai,Sim,Exposto,Baixa,Não,Sim,25.2,9,5.69,Sim,Não
+442,59,Masculino,Leste,Fev,Não,Não exposto,Baixa,Sim,Sim,27.9,19,8.51,Sim,Sim
+443,22,Masculino,Oeste,Mai,Não,Não exposto,Alta,Sim,Não,23.7,4,2.58,Não,Não
+444,20,Feminino,Norte,Abr,Não,Não exposto,Moderada,Não,Não,37.4,8,3.35,Não,Não
+445,18,Masculino,Sul,Mai,Não,Não exposto,Moderada,Sim,Sim,17.0,6,5.15,Não,Não
+446,39,Masculino,Oeste,Fev,Não,Não exposto,Baixa,Sim,Não,34.0,9,3.76,Não,Não
+447,46,Feminino,Centro,Jun,Não,Não exposto,Baixa,Sim,Não,22.9,9,1.7,Não,Não
+448,18,Feminino,Norte,Mar,Não,Não exposto,Moderada,Sim,Não,33.6,7,4.46,Não,Não
+449,34,Feminino,Norte,Abr,Não,Não exposto,Baixa,Não,Não,30.7,5,3.48,Não,Não
+450,18,Masculino,Centro,Jan,Não,Não exposto,Moderada,Não,Não,20.6,3,3.97,Não,Não
+451,34,Masculino,Oeste,Jun,Não,Não exposto,Baixa,Não,Não,27.2,4,3.62,Não,Não
+452,67,Masculino,Oeste,Mai,Não,Não exposto,Moderada,Sim,Não,27.1,10,4.09,Sim,Não
+453,48,Masculino,Norte,Jan,Sim,Exposto,Moderada,Sim,Não,20.8,8,3.7,Não,Não
+454,75,Masculino,Centro,Abr,Sim,Exposto,Alta,Sim,Sim,27.4,8,3.07,Não,Não
+455,58,Feminino,Centro,Jun,Não,Não exposto,Baixa,Não,Sim,30.0,6,4.12,Não,Não
+456,38,Feminino,Sul,Jan,Não,Não exposto,Moderada,Não,Não,29.8,5,5.49,Não,Não
+457,74,Masculino,Oeste,Mar,Sim,Exposto,Baixa,Não,Sim,26.3,7,1.46,Não,Não
+458,62,Masculino,Oeste,Fev,Não,Não exposto,Baixa,Sim,Não,21.8,15,3.82,Sim,Não
+459,18,Feminino,Sul,Mai,Não,Não exposto,Baixa,Sim,Não,22.9,12,3.77,Não,Não
+460,40,Masculino,Centro,Jan,Não,Não exposto,Alta,Sim,Não,24.1,6,5.61,Não,Não
+461,33,Feminino,Centro,Jan,Não,Não exposto,Baixa,Sim,Não,25.2,5,4.19,Não,Não
+462,42,Feminino,Sul,Abr,Não,Não exposto,Moderada,Sim,Sim,23.8,10,3.48,Não,Não
+463,52,Feminino,Oeste,Abr,Não,Não exposto,Moderada,Não,Não,33.1,8,5.42,Não,Não
+464,66,Masculino,Oeste,Mar,Não,Não exposto,Moderada,Sim,Não,28.5,5,1.93,Não,Não
+465,51,Masculino,Centro,Fev,Não,Não exposto,Baixa,Sim,Não,34.1,5,2.85,Não,Não
+466,41,Masculino,Norte,Jun,Não,Não exposto,Baixa,Não,Não,20.6,5,3.52,Não,Não
+467,62,Masculino,Sul,Jan,Não,Não exposto,Moderada,Sim,Sim,23.9,10,5.01,Não,Não
+468,41,Masculino,Oeste,Mar,Sim,Exposto,Baixa,Sim,Não,26.5,5,2.97,Não,Não
+469,57,Feminino,Oeste,Abr,Não,Não exposto,Alta,Sim,Não,28.9,2,3.64,Não,Não
+470,42,Masculino,Norte,Mai,Não,Não exposto,Baixa,Não,Sim,27.7,8,4.09,Não,Não
+471,69,Feminino,Oeste,Jan,Não,Não exposto,Moderada,Sim,Sim,26.4,3,3.11,Não,Não
+472,48,Masculino,Oeste,Abr,Sim,Exposto,Moderada,Não,Sim,22.5,7,2.86,Não,Não
+473,36,Feminino,Sul,Fev,Não,Não exposto,Alta,Sim,Não,18.2,6,2.95,Não,Não
+474,23,Masculino,Sul,Fev,Sim,Exposto,Moderada,Sim,Não,25.9,20,5.13,Não,Sim
+475,48,Feminino,Centro,Mai,Não,Não exposto,Moderada,Sim,Sim,35.7,8,3.1,Não,Não
+476,37,Feminino,Norte,Abr,Sim,Exposto,Moderada,Sim,Sim,17.3,3,3.13,Não,Não
+477,70,Feminino,Oeste,Fev,Sim,Exposto,Moderada,Sim,Sim,33.1,6,1.2,Não,Não
+478,57,Masculino,Leste,Mai,Não,Não exposto,Moderada,Sim,Sim,33.9,11,1.98,Não,Não
+479,51,Masculino,Sul,Mai,Não,Não exposto,Moderada,Não,Não,30.3,9,2.88,Não,Não
+480,40,Masculino,Leste,Abr,Sim,Exposto,Moderada,Sim,Não,20.5,5,3.64,Não,Não
+481,57,Masculino,Centro,Fev,Sim,Exposto,Moderada,Não,Sim,29.5,5,3.46,Não,Não
+482,28,Masculino,Leste,Abr,Não,Não exposto,Moderada,Sim,Sim,26.0,7,3.86,Não,Não
+483,18,Feminino,Leste,Jan,Sim,Exposto,Moderada,Sim,Sim,20.5,7,4.88,Não,Não
+484,23,Masculino,Leste,Abr,Não,Não exposto,Moderada,Não,Não,21.6,5,4.15,Não,Não
+485,47,Feminino,Leste,Mai,Sim,Exposto,Moderada,Sim,Sim,17.2,7,3.8,Não,Não
+486,84,Masculino,Leste,Jun,Não,Não exposto,Baixa,Não,Não,21.0,5,6.3,Sim,Não
+487,65,Masculino,Oeste,Jan,Sim,Exposto,Moderada,Sim,Sim,26.0,11,1.77,Não,Não
+488,49,Masculino,Sul,Fev,Sim,Exposto,Moderada,Não,Não,26.8,8,2.62,Não,Não
+489,41,Masculino,Leste,Abr,Sim,Exposto,Moderada,Não,Não,22.9,13,2.75,Não,Não
+490,41,Masculino,Norte,Abr,Sim,Exposto,Alta,Sim,Não,20.1,5,4.47,Não,Não
+491,45,Masculino,Leste,Mar,Sim,Exposto,Baixa,Sim,Sim,26.3,6,4.28,Não,Não
+492,42,Feminino,Norte,Jun,Não,Não exposto,Alta,Sim,Não,22.0,6,2.92,Não,Não
+493,71,Masculino,Leste,Jun,Sim,Exposto,Baixa,Não,Sim,31.1,12,6.49,Sim,Não
+494,18,Feminino,Sul,Jun,Não,Não exposto,Baixa,Não,Não,34.8,7,4.38,Não,Não
+495,66,Masculino,Centro,Mai,Não,Não exposto,Baixa,Sim,Sim,24.4,6,1.61,Não,Não
+496,39,Masculino,Oeste,Mar,Sim,Exposto,Baixa,Sim,Não,31.3,7,4.08,Não,Não
+497,24,Feminino,Centro,Mai,Não,Não exposto,Moderada,Sim,Não,22.6,5,3.33,Não,Não
+498,35,Feminino,Centro,Jun,Sim,Exposto,Baixa,Sim,Não,29.0,12,4.24,Sim,Não
+499,44,Masculino,Oeste,Mai,Não,Não exposto,Moderada,Sim,Não,24.1,7,6.01,Não,Não
+500,70,Feminino,Sul,Fev,Não,Não exposto,Baixa,Sim,Sim,30.9,4,3.1,Não,Não
+501,33,Feminino,Leste,Mai,Não,Não exposto,Baixa,Não,Não,21.7,3,3.28,Não,Não
+502,73,Masculino,Oeste,Fev,Não,Não exposto,Alta,Sim,Não,21.6,5,2.76,Não,Não
+503,35,Feminino,Leste,Abr,Não,Não exposto,Moderada,Não,Não,32.5,6,3.26,Não,Não
+504,72,Feminino,Norte,Abr,Não,Não exposto,Baixa,Não,Sim,28.6,9,5.46,Sim,Não
+505,41,Feminino,Oeste,Jan,Não,Não exposto,Moderada,Sim,Não,31.7,9,3.79,Não,Não
+506,87,Feminino,Leste,Mar,Não,Não exposto,Moderada,Não,Sim,22.1,8,4.55,Não,Não
+507,61,Masculino,Norte,Jun,Sim,Exposto,Baixa,Sim,Não,35.2,11,2.6,Não,Não
+508,42,Masculino,Leste,Mar,Sim,Exposto,Alta,Não,Não,27.8,6,1.81,Não,Não
+509,78,Masculino,Sul,Mar,Não,Não exposto,Baixa,Não,Sim,27.2,8,5.47,Não,Não
+510,49,Feminino,Leste,Mar,Sim,Exposto,Baixa,Não,Não,23.7,9,2.12,Não,Não
+511,25,Feminino,Sul,Mai,Não,Não exposto,Moderada,Sim,Não,33.1,4,1.53,Não,Não
+512,41,Feminino,Leste,Fev,Não,Não exposto,Moderada,Sim,Não,25.0,1,3.23,Não,Não
+513,21,Feminino,Oeste,Mai,Não,Não exposto,Moderada,Sim,Não,,9,3.14,Não,Não
+514,24,Feminino,Oeste,Jun,Sim,Exposto,Alta,Sim,Sim,30.2,3,5.32,Não,Não
+515,63,Feminino,Sul,Fev,Sim,Exposto,Baixa,Sim,Sim,37.1,5,2.91,Não,Não
+516,51,Masculino,Norte,Mai,Sim,Exposto,Baixa,Não,Não,31.0,7,4.17,Não,Não
+517,32,Masculino,Norte,Abr,Não,Não exposto,Moderada,Sim,Não,25.9,10,3.11,Não,Não
+518,55,Masculino,Oeste,Jan,Não,Não exposto,Alta,Não,Sim,21.8,11,2.47,Não,Não
+519,32,Feminino,Leste,Jan,Não,Não exposto,Alta,Sim,Não,22.0,9,0.44,Não,Não
+520,51,Feminino,Oeste,Abr,Não,Não exposto,Baixa,Não,Não,27.1,7,3.41,Não,Não
+521,51,Feminino,Sul,Mar,Sim,Exposto,Moderada,Sim,Sim,28.2,9,4.34,Sim,Não
+522,63,Masculino,Centro,Jun,Sim,Exposto,Baixa,Sim,Não,31.6,4,3.56,Não,Não
+523,18,Feminino,Leste,Mar,Sim,Exposto,Moderada,Não,Sim,23.1,3,2.16,Não,Não
+524,55,Feminino,Oeste,Mai,Sim,Exposto,Moderada,Sim,Sim,21.1,7,3.99,Não,Não
+525,72,Masculino,Oeste,Jun,Sim,Exposto,Moderada,Sim,Sim,29.4,8,4.6,Não,Não
+526,70,Feminino,Oeste,Mai,Não,Não exposto,Alta,Não,Sim,17.0,5,3.6,Não,Não
+527,61,Masculino,Leste,Abr,Não,Não exposto,Alta,Sim,Não,22.6,8,3.72,Não,Não
+528,46,Feminino,Norte,Mar,Não,Não exposto,Baixa,Sim,Não,35.0,10,2.61,Não,Não
+529,44,Masculino,Leste,Mai,Sim,Exposto,Baixa,Sim,Não,20.3,7,3.38,Não,Não
+530,18,Feminino,Leste,Fev,Não,Não exposto,Baixa,Não,Não,25.3,4,3.43,Não,Não
+531,32,Masculino,Centro,Mar,Não,Não exposto,Moderada,Sim,Não,32.9,8,4.16,Não,Não
+532,40,Feminino,Sul,Jun,Sim,Exposto,Alta,Sim,Não,22.5,6,2.92,Não,Não
+533,20,Feminino,Centro,Mar,Não,Não exposto,Moderada,Sim,Sim,31.2,8,2.8,Não,Não
+534,18,Feminino,Oeste,Mai,Não,Não exposto,Moderada,Sim,Sim,33.4,5,5.08,Não,Não
+535,33,Masculino,Centro,Fev,Não,Não exposto,Moderada,Sim,Não,25.9,6,2.61,Não,Não
+536,18,Masculino,Sul,Jun,Não,Não exposto,Moderada,Não,Sim,24.2,3,1.91,Não,Não
+537,43,Feminino,Leste,Mai,Não,Não exposto,Baixa,Sim,Sim,28.1,3,4.07,Não,Não
+538,18,Feminino,Norte,Jan,Não,Não exposto,Alta,Não,Não,22.8,5,2.05,Não,Não
+539,51,Feminino,Centro,Mai,Não,Não exposto,Baixa,Sim,Sim,28.0,6,3.55,Não,Não
+540,33,Feminino,Oeste,Jan,Não,Não exposto,Baixa,Sim,Não,27.6,10,2.36,Não,Não
+541,30,Masculino,Leste,Abr,Sim,Exposto,Moderada,Sim,Não,30.7,10,3.87,Não,Não
+542,41,Feminino,Sul,Mar,Não,Não exposto,Baixa,Sim,Não,31.7,4,3.15,Não,Não
+543,37,Masculino,Sul,Abr,Não,Não exposto,Alta,Não,Não,23.2,6,2.48,Não,Não
+544,50,Feminino,Leste,Fev,Sim,Exposto,Baixa,Não,Não,34.2,8,1.45,Não,Não
+545,42,Masculino,Sul,Abr,Não,Não exposto,Alta,Sim,Não,27.6,10,1.53,Não,Não
+546,42,Feminino,Leste,Mar,Não,Não exposto,Moderada,Não,Sim,21.6,16,4.35,Não,Não
+547,36,Feminino,Oeste,Mar,Não,Não exposto,Baixa,Sim,Sim,31.3,7,2.84,Não,Não
+548,32,Feminino,Leste,Fev,Sim,Exposto,Moderada,Não,Não,30.3,4,4.27,Não,Não
+549,52,Feminino,Leste,Jan,Não,Não exposto,Moderada,Não,Não,31.3,4,4.59,Não,Não
+550,38,Masculino,Centro,Mai,Não,Não exposto,Moderada,Sim,Não,22.8,8,2.45,Não,Não
+551,18,Feminino,Leste,Mai,Não,Não exposto,Alta,Não,Não,26.6,7,6.03,Não,Não
+552,40,Feminino,Norte,Abr,Não,Não exposto,Baixa,Sim,Não,38.2,5,5.24,Não,Não
+553,39,Masculino,Norte,Mai,Não,Não exposto,Moderada,Sim,Não,29.3,9,3.14,Não,Não
+554,61,Feminino,Sul,Mai,Não,Não exposto,Baixa,Sim,Sim,31.4,6,1.75,Não,Não
+555,73,Masculino,Norte,Mai,Não,Não exposto,Moderada,Sim,Sim,20.8,7,2.45,Não,Não
+556,90,Feminino,Sul,Mai,Sim,Exposto,Baixa,Sim,Sim,34.4,14,4.72,Sim,Não
+557,36,Masculino,Sul,Jun,Não,Não exposto,Alta,Não,Não,21.6,7,2.45,Não,Não
+558,60,Feminino,Sul,Mai,Não,Não exposto,Alta,Sim,Sim,24.8,11,4.86,Sim,Não
+559,59,Feminino,Sul,Mar,Não,Não exposto,Moderada,Sim,Não,27.1,7,3.64,Não,Não
+560,18,Feminino,Centro,Abr,Não,Não exposto,Moderada,Sim,Não,22.1,11,3.18,Não,Não
+561,18,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Não,Não,25.4,7,4.13,Não,Não
+562,18,Masculino,Leste,Mar,Sim,Exposto,Moderada,Não,Não,18.1,6,3.33,Não,Não
+563,47,Feminino,Oeste,Fev,Sim,Exposto,Baixa,Sim,Sim,28.7,4,1.64,Não,Não
+564,34,Masculino,Oeste,Jun,Não,Não exposto,Alta,Não,Sim,26.6,4,4.7,Não,Não
+565,69,Feminino,Oeste,Mar,Não,Não exposto,Moderada,Sim,Não,,9,3.41,Não,Não
+566,38,Feminino,Centro,Mar,Não,Não exposto,Moderada,Sim,Sim,17.0,3,2.07,Não,Não
+567,71,Feminino,Leste,Mar,Não,Não exposto,Moderada,Não,Sim,19.9,8,4.0,Não,Não
+568,57,Feminino,Norte,Jan,Não,Não exposto,Moderada,Sim,Sim,22.1,10,3.61,Não,Não
+569,85,Masculino,Sul,Mai,Não,Não exposto,Baixa,Não,Sim,32.9,8,4.6,Não,Não
+570,18,Feminino,Sul,Jan,Não,Não exposto,Moderada,Sim,Sim,32.2,3,3.01,Não,Não
+571,63,Feminino,Leste,Jun,Não,Não exposto,Baixa,Sim,Não,27.2,7,3.04,Não,Não
+572,39,Feminino,Oeste,Abr,Sim,Exposto,Moderada,Não,Não,33.6,5,2.05,Não,Não
+573,52,Masculino,Centro,Jun,Não,Não exposto,Baixa,Sim,Sim,27.2,10,5.6,Não,Não
+574,57,Masculino,Oeste,Mar,Sim,Exposto,Baixa,Sim,Sim,29.0,19,5.44,Sim,Não
+575,34,Masculino,Norte,Abr,Sim,Exposto,Alta,Não,Não,26.0,6,2.96,Não,Não
+576,27,Feminino,Norte,Jun,Não,Não exposto,Moderada,Sim,Não,25.0,9,3.42,Não,Não
+577,73,Masculino,Oeste,Jan,Não,Não exposto,Moderada,Não,Sim,28.0,3,3.25,Não,Não
+578,55,Feminino,Sul,Jan,Sim,Exposto,Moderada,Sim,Sim,24.9,2,2.47,Não,Não
+579,66,Masculino,Leste,Mai,Sim,Exposto,Baixa,Sim,Sim,35.5,8,1.82,Não,Não
+580,73,Feminino,Centro,Mar,Não,Não exposto,Alta,Sim,Sim,23.1,14,3.85,Sim,Não
+581,90,Masculino,Leste,Mar,Não,Não exposto,Baixa,Sim,Sim,32.7,5,5.59,Não,Não
+582,53,Masculino,Norte,Jan,Não,Não exposto,Moderada,Sim,Sim,,7,2.08,Não,Não
+583,33,Masculino,Leste,Mar,Sim,Exposto,Moderada,Sim,Não,18.5,6,5.46,Não,Não
+584,51,Feminino,Oeste,Abr,Sim,Exposto,Moderada,Não,Não,19.7,3,6.08,Não,Não
+585,68,Masculino,Oeste,Jan,Não,Não exposto,Baixa,Não,Sim,33.7,10,3.1,Não,Não
+586,38,Feminino,Oeste,Abr,Sim,Exposto,Moderada,Sim,Não,24.8,8,1.69,Não,Não
+587,33,Feminino,Sul,Mar,Não,Não exposto,Moderada,Sim,Não,34.0,6,4.05,Não,Não
+588,18,Feminino,Centro,Mai,Não,Não exposto,Moderada,Não,Não,34.4,6,1.7,Não,Não
+589,50,Feminino,Sul,Jan,Não,Não exposto,Baixa,Sim,Não,19.8,7,3.67,Não,Não
+590,45,Masculino,Sul,Abr,Não,Não exposto,Alta,Sim,Sim,32.3,10,2.45,Não,Não
+591,39,Feminino,Oeste,Mai,Não,Não exposto,Moderada,Sim,Não,27.5,4,1.3,Não,Não
+592,59,Feminino,Centro,Mar,Não,Não exposto,Baixa,Não,Não,25.3,5,4.17,Não,Não
+593,48,Feminino,Centro,Jan,Não,Não exposto,Baixa,Não,Sim,26.1,8,4.26,Não,Não
+594,56,Masculino,Oeste,Mai,Sim,Exposto,Alta,Não,Não,28.3,13,3.56,Não,Não
+595,90,Feminino,Centro,Mar,Não,Não exposto,Moderada,Sim,Sim,18.5,8,3.95,Não,Não
+596,67,Feminino,Leste,Mar,Não,Não exposto,Moderada,Sim,Não,,9,3.99,Não,Não
+597,49,Feminino,Oeste,Jun,Não,Não exposto,Baixa,Sim,Não,19.1,3,2.95,Não,Não
+598,48,Masculino,Centro,Mai,Não,Não exposto,Alta,Não,Não,20.5,7,3.25,Não,Não
+599,38,Feminino,Oeste,Jun,Não,Não exposto,Moderada,Sim,Não,25.6,10,3.24,Não,Não
+600,49,Feminino,Norte,Jun,Não,Não exposto,Moderada,Sim,Sim,33.2,12,4.48,Não,Não
