@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-background: #05120a;
+  --color-foreground: #eef5ee;
+  --color-card: #0b1f11;
+  --color-card-foreground: #c8dfc8;
+  --color-primary: #f5c800;
+  --color-primary-foreground: #05120a;
+  --color-secondary: #1e4d8c;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #0f2a17;
+  --color-muted-foreground: #6b9975;
+  --color-accent: #22c55e;
+  --color-accent-foreground: #05120a;
+  --color-border: rgba(245, 200, 0, 0.15);
+  --color-ring: #f5c800;
+  --radius: 0.75rem;
+
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Hide scrollbars until scrolling */
+  .scrollbars-hidden {
+    scrollbar-width: none;
+  }
+  .scrollbars-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes nexo-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: nexo-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes nexo-float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .animate-float {
+    animation: nexo-float 6s ease-in-out infinite;
+  }
+
+  @keyframes nexo-pulse-glow {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.75;
+    }
+  }
+  .animate-pulse-glow {
+    animation: nexo-pulse-glow 5s ease-in-out infinite;
+  }
+}
