@@ -1,0 +1,122 @@
+{
+  "name": "Catálogo de Livros MCP",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "id": "52060330-99da-4538-a645-e8f8a4a543c2",
+      "name": "Chat Trigger",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "363075d7-8b3e-42ab-b9b8-ab55be124084"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "Você é um assistente de catálogo de livros. Use as ferramentas MCP sempre que o usuário quiser cadastrar, listar ou buscar livros. Para cadastrar, título e autor são obrigatórios. Não invente livros nem IDs. Responda sempre em português e apresente os resultados de forma clara."
+        }
+      },
+      "id": "befd1ee9-8543-4c23-9d1e-036188114c39",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        272,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "endpointUrl": "http://host.docker.internal:3000/mcp",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "1e87ba62-8154-446c-8a37-c625441ec154",
+      "name": "MCP Catálogo de Livros",
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1.4,
+      "position": [
+        448,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-5-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi",
+      "typeVersion": 1,
+      "position": [
+        144,
+        208
+      ],
+      "id": "ca0e23df-3585-4183-a2c2-1252204194e4",
+      "name": "Azure OpenAI Chat Model",
+      "credentials": {
+        "azureOpenAiApi": {
+          "id": "zR88piRn2Wjgbwc6",
+          "name": "Azure Open AI account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Chat Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Catálogo de Livros": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Azure OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "3edb86c7-12db-460a-98f6-ecc383f14541",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ec15b14e22e84bcccebc9f11d5af3535be2f8c14c5541cbe5a3c052e1a1b9d35"
+  },
+  "nodeGroups": [],
+  "id": "oJWwqSbCgGK4RhpK",
+  "tags": []
+}
